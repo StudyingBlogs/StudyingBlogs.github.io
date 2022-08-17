@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Linux基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Linux学习虚拟机克隆虚拟机快照回到原来的状态 vmtools1.可以设置windows和centos的共享文件夹 共享文件夹设置-&gt;选项-&gt;共享文件夹其他位置-&gt;计算机-&gt;mnt-&gt;hgfs Linux目录结构&#x2F;bin存放常用的指令 &#x2F;sbin管理员使用的系统管理程序 &#x2F;home存放普通用户的主目录，在Linux中每个用户都有一个自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础">
+<meta property="og:url" content="http://example.com/2022/08/17/linux/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux学习虚拟机克隆虚拟机快照回到原来的状态 vmtools1.可以设置windows和centos的共享文件夹 共享文件夹设置-&gt;选项-&gt;共享文件夹其他位置-&gt;计算机-&gt;mnt-&gt;hgfs Linux目录结构&#x2F;bin存放常用的指令 &#x2F;sbin管理员使用的系统管理程序 &#x2F;home存放普通用户的主目录，在Linux中每个用户都有一个自己">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/Snipaste_2022-07-22_09-44-46.png">
+<meta property="og:image" content="https://th.bing.com/th/id/R.acc327dfe0d5328c1ad102179c70b641?rik=i+FnOxLzzfUKfg&riu=http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif&ehk=2lhvrNWf3svGxmGmcwCPZ7MpnQiKi+TnVC3Urh0tXng=&risl=&pid=ImgRaw&r=0">
+<meta property="article:published_time" content="2022-08-17T03:46:19.559Z">
+<meta property="article:modified_time" content="2022-08-17T03:46:45.895Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/Snipaste_2022-07-22_09-44-46.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/17/linux/" class="article-date">
+  <time class="dt-published" datetime="2022-08-17T03:46:19.559Z" itemprop="datePublished">2022-08-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h1><h2 id="虚拟机克隆"><a href="#虚拟机克隆" class="headerlink" title="虚拟机克隆"></a>虚拟机克隆</h2><h2 id="虚拟机快照"><a href="#虚拟机快照" class="headerlink" title="虚拟机快照"></a>虚拟机快照</h2><p>回到原来的状态</p>
+<h2 id="vmtools"><a href="#vmtools" class="headerlink" title="vmtools"></a>vmtools</h2><p>1.可以设置windows和centos的共享文件夹</p>
+<h2 id="共享文件夹"><a href="#共享文件夹" class="headerlink" title="共享文件夹"></a>共享文件夹</h2><p>设置-&gt;选项-&gt;共享文件夹<br>其他位置-&gt;计算机-&gt;mnt-&gt;hgfs</p>
+<h2 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h2><h3 id="x2F-bin"><a href="#x2F-bin" class="headerlink" title="&#x2F;bin"></a>&#x2F;bin</h3><p>存放常用的指令</p>
+<h3 id="x2F-sbin"><a href="#x2F-sbin" class="headerlink" title="&#x2F;sbin"></a>&#x2F;sbin</h3><p>管理员使用的系统管理程序</p>
+<h3 id="x2F-home"><a href="#x2F-home" class="headerlink" title="&#x2F;home"></a>&#x2F;home</h3><p>存放普通用户的主目录，在Linux中每个用户都有一个自己的目录，一般该目录是以用户的账号命名</p>
+<h3 id="x2F-root"><a href="#x2F-root" class="headerlink" title="&#x2F;root"></a>&#x2F;root</h3><p>系统管理员的用户主目录</p>
+<h3 id="x2F-lib"><a href="#x2F-lib" class="headerlink" title="&#x2F;lib"></a>&#x2F;lib</h3><p>系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要这些共享库</p>
+<h3 id="x2F-lost-found"><a href="#x2F-lost-found" class="headerlink" title="&#x2F;lost+found"></a>&#x2F;lost+found</h3><p>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件</p>
+<h3 id="x2F-etc"><a href="#x2F-etc" class="headerlink" title="&#x2F;etc"></a>&#x2F;etc</h3><p>所有的系统管理所需要的配置文件和子目录，比如安装mysql数据库my.conf</p>
+<h3 id="x2F-usr"><a href="#x2F-usr" class="headerlink" title="&#x2F;usr"></a>&#x2F;usr</h3><p>这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下<br>的program files目录，</p>
+<h3 id="x2F-boot"><a href="#x2F-boot" class="headerlink" title="&#x2F;boot"></a>&#x2F;boot</h3><p>存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件</p>
+<h3 id="x2F-proc"><a href="#x2F-proc" class="headerlink" title="&#x2F;proc"></a>&#x2F;proc</h3><p>这个目录是一个虚拟的目录，它是系统内存的映射，访问这个目录来获取系统信息</p>
+<h3 id="x2F-srv-service"><a href="#x2F-srv-service" class="headerlink" title="&#x2F;srv service"></a>&#x2F;srv service</h3><p>缩写，该目录存放一些服务启动之后需要提取的数据</p>
+<h3 id="x2F-sys"><a href="#x2F-sys" class="headerlink" title="&#x2F;sys"></a>&#x2F;sys</h3><p>这是linux2.6内核的一个很大的变化.核目录下安装了2.6内核中新出现的一个文件系sysfs</p>
+<h3 id="x2F-tmp"><a href="#x2F-tmp" class="headerlink" title="&#x2F;tmp"></a>&#x2F;tmp</h3><p>这个目录是用来存放一些临时文件的</p>
+<h3 id="x2F-dev"><a href="#x2F-dev" class="headerlink" title="&#x2F;dev"></a>&#x2F;dev</h3><p>类似于windows的设备管理器，把所有的硬件用文件的形式存储</p>
+<h3 id="x2F-media"><a href="#x2F-media" class="headerlink" title="&#x2F;media"></a>&#x2F;media</h3><p>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下</p>
+<h3 id="x2F-mnt"><a href="#x2F-mnt" class="headerlink" title="&#x2F;mnt"></a>&#x2F;mnt</h3><p>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将外部的存储挂载在&#x2F;mnt&#x2F;上然后进入该目录就可以查看里的内容了。d:&#x2F;myshare</p>
+<h3 id="x2F-opt"><a href="#x2F-opt" class="headerlink" title="&#x2F;opt"></a>&#x2F;opt</h3><p>这是给主机额外安装软件所摆放的目录。如安装ORACLE数据库就可放到该目录下。</p>
+<h3 id="x2F-usr-x2F-local"><a href="#x2F-usr-x2F-local" class="headerlink" title="&#x2F;usr&#x2F;local"></a>&#x2F;usr&#x2F;local</h3><p>这是另一个给主机额外安装软件所安装的目录。一般是通过编译源码方式安装的程序</p>
+<h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>这个目录中存放着在不断甘充着的东西，习惯将经常被修改的目录放在这个目录下。包括各种日志文件</p>
+<h3 id="x2F-selinux-security-enhanced-linux"><a href="#x2F-selinux-security-enhanced-linux" class="headerlink" title="&#x2F;selinux [security-enhanced linux]"></a>&#x2F;selinux [security-enhanced linux]</h3><p>SELinux是一种安全子系统它能控制程序只能访问特定文件，有三种工作模式，可以自行设置.</p>
+<h2 id="vi和vim"><a href="#vi和vim" class="headerlink" title="vi和vim"></a>vi和vim</h2><p>Vim具有程序编辑的能力，可以看作是vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编辑及错误跳转等方便编辑的功能特别丰富，在程序中被广泛使用。</p>
+<h3 id="正常模式"><a href="#正常模式" class="headerlink" title="正常模式"></a>正常模式</h3><p>以Vm打开一个档系就直接进入一般模式了（这是默认的模式）.在这个模式中，你可以使用「上下左右！按键来移动光标，你可以使用「删除字符】或『删除整行」来处理档案内容，也可以使用『复制、粘贴「来处理你的文件数据。</p>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>按下，i,I,O,O,a,A,r,R等任何一个字母之后才会进入编辑模式，一搬来说按i即可.</p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>ESC + : 进入<br>在这个模式当中，可以提供你相关指令，完成读取、存盘、替换、离开m、显示行号等的动作则是在此模式中达成的！<br><img src="/images/Snipaste_2022-07-22_09-44-46.png" alt="图片"></p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><p>1拷贝当前行yy,拷贝当前行向下的5行 5yy,并粘（输入P)。<br>2.副除当前行dd,删除当前行向下的5行5dd<br>3.在文件中查找某个单词[命令行下&#x2F;关键字，回车查找，输入就是查找下一个]<br>4.设置文件的行号，取消文件的行号.[命令行下：set nu和set nonu<br>5.编辑&#x2F;etc&#x2F;profile文件，使用快捷键到该文档的最末行[G]和最首行[gg]<br>6.在一个文件中输入”hello”,然后叉微销这个动作u<br>7.编辑&#x2F;etc&#x2F;profile文件，并将光标移动到20行shift+g<br><img src="https://th.bing.com/th/id/R.acc327dfe0d5328c1ad102179c70b641?rik=i+FnOxLzzfUKfg&riu=http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif&ehk=2lhvrNWf3svGxmGmcwCPZ7MpnQiKi+TnVC3Urh0tXng=&risl=&pid=ImgRaw&r=0" alt="图片"></p>
+<h2 id="关机，重启命令"><a href="#关机，重启命令" class="headerlink" title="关机，重启命令"></a>关机，重启命令</h2><p>shutdown -h&#x2F;-r now&#x2F;1立刻关机&#x2F;重启&#x2F;1分钟后<br>halt 关机<br>reboot 重启<br>sync 把内存的数据同步到磁盘</p>
+<h2 id="用户登录和注销"><a href="#用户登录和注销" class="headerlink" title="用户登录和注销"></a>用户登录和注销</h2><p>logout注销用户</p>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>useradd<br>useradd -d 指定目录<br>passwd 用户名 + 回车</p>
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>1.删除目录，但是保留家目录<br>userdel 用户名<br>2.删除用户以及用户主目录<br>userdel -r 用户名<br>一般情况下保留家目录</p>
+<h2 id="查找用户"><a href="#查找用户" class="headerlink" title="查找用户"></a>查找用户</h2><p>id 用户名</p>
+<h2 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h2><p>su - 用户名</p>
+<h2 id="查看当前用户信息"><a href="#查看当前用户信息" class="headerlink" title="查看当前用户信息"></a>查看当前用户信息</h2><p>whoami</p>
+<h2 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h2><h3 id="新增组"><a href="#新增组" class="headerlink" title="新增组"></a>新增组</h3><p>groupadd</p>
+<h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><p>groupdel</p>
+<h3 id="增加用户到组"><a href="#增加用户到组" class="headerlink" title="增加用户到组"></a>增加用户到组</h3><p>useradd -g 用户组 用户名</p>
+<h3 id="修改组"><a href="#修改组" class="headerlink" title="修改组"></a>修改组</h3><p>usermod -g 用户组 用户名</p>
+<h2 id="指定运行级别"><a href="#指定运行级别" class="headerlink" title="指定运行级别"></a>指定运行级别</h2><ul>
+<li>0:关机</li>
+<li>1:单用户</li>
+<li>2:多用户状态没有网络服务</li>
+<li>3:多用户有网络服务</li>
+<li>4:系统未使用保留给用户</li>
+<li>5:图形界面</li>
+<li>6:系统重启</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/17/linux/" data-id="cl6x5ac4f000324ua99zzhejk" data-title="Linux基础" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PYTHON爬虫简单语法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/17/linux/">Linux基础</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/">PYTHON爬虫简单语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/Easyx%E4%BD%BF%E7%94%A8/">Easyx基本语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/latex/">Latex简单语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/%E7%BA%A2%E9%BB%91%E6%A0%91/">红黑树</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

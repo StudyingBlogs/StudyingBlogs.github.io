@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>前端第03节，WEB_APIS的学习 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Web APIs作用和分类作用使用JS去操作html和浏览器 分类DOM、BOM DOMDOM是浏览器提供的一套专门用来操作网页内容的功能，开发网页内容特效和用户交互 DOM树将HTML文档以树状结构直观的表现出来，我们称之为文档或DOM树描述网页内容关系的名词作用：文档树直观的体现了标签与标签之间的关系 DOM对象浏览器根据html标签生成的JS对象，把网页内容当作对象来处理 获取DOM元素根据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端第03节，WEB_APIS的学习">
+<meta property="og:url" content="http://example.com/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB_APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Web APIs作用和分类作用使用JS去操作html和浏览器 分类DOM、BOM DOMDOM是浏览器提供的一套专门用来操作网页内容的功能，开发网页内容特效和用户交互 DOM树将HTML文档以树状结构直观的表现出来，我们称之为文档或DOM树描述网页内容关系的名词作用：文档树直观的体现了标签与标签之间的关系 DOM对象浏览器根据html标签生成的JS对象，把网页内容当作对象来处理 获取DOM元素根据">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-25_19-39-37.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-24_18-23-38.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-27_11-09-45.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-27_16-40-38.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-27_16-43-20.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-27_17-23-24.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-27_17-58-43.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-28_11-02-11.png">
+<meta property="og:image" content="http://example.com/image/Snipaste_2022-07-28_11-53-57.png">
+<meta property="article:published_time" content="2022-08-17T02:30:45.161Z">
+<meta property="article:modified_time" content="2022-08-17T02:52:10.652Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/Snipaste_2022-07-25_19-39-37.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-前端第03节，WEB_APIS的学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB_APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-08-17T02:30:45.161Z" itemprop="datePublished">2022-08-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      前端第03节，WEB_APIS的学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-APIs"><a href="#Web-APIs" class="headerlink" title="Web APIs"></a>Web APIs</h1><h2 id="作用和分类"><a href="#作用和分类" class="headerlink" title="作用和分类"></a>作用和分类</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>使用JS去操作html和浏览器</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>DOM、BOM</p>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>DOM是浏览器提供的一套专门用来操作网页内容的功能，开发网页内容特效和用户交互</p>
+<h5 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h5><p>将HTML文档以树状结构直观的表现出来，我们称之为文档或DOM树<br>描述网页内容关系的名词<br>作用：文档树直观的体现了标签与标签之间的关系<br><img src="/image/Snipaste_2022-07-25_19-39-37.png" alt="图片"></p>
+<h5 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h5><p>浏览器根据html标签生成的JS对象，把网页内容当作对象来处理</p>
+<h5 id="获取DOM元素"><a href="#获取DOM元素" class="headerlink" title="获取DOM元素"></a>获取DOM元素</h5><h6 id="根据css选择器来获取DOM元素"><a href="#根据css选择器来获取DOM元素" class="headerlink" title="根据css选择器来获取DOM元素"></a>根据css选择器来获取DOM元素</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 只能得到第一个元素 --&gt;</span><br><span class="line">document.querySelectorAll(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 获取所有元素 --&gt;</span><br><span class="line">&lt;!-- 返回得到对象集合 --&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="对象-innerText"><a href="#对象-innerText" class="headerlink" title="对象.innerText"></a>对象.innerText</h6><p>不识别标签</p>
+<h6 id="对象-innerHTML"><a href="#对象-innerHTML" class="headerlink" title="对象.innerHTML"></a>对象.innerHTML</h6><p>可以解析标签</p>
+<h6 id="通过style修改样式属性"><a href="#通过style修改样式属性" class="headerlink" title="通过style修改样式属性"></a>通过style修改样式属性</h6><p>对象.style.样式属性 &#x3D; 值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.style.backgroundImage = `url()`</span><br></pre></td></tr></table></figure>
+<h6 id="修改元素操作类"><a href="#修改元素操作类" class="headerlink" title="修改元素操作类"></a>修改元素操作类</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.className = &#x27;one active&#x27;</span><br></pre></td></tr></table></figure>
+<h6 id="操作类数组"><a href="#操作类数组" class="headerlink" title="操作类数组"></a>操作类数组</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">元素.classList.add(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 增加类 --&gt;</span><br><span class="line">元素.classList.remove(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 删除类 --&gt;</span><br><span class="line">元素.classList.toggle(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 切换类 --&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="修改表单属性"><a href="#修改表单属性" class="headerlink" title="修改表单属性"></a>修改表单属性</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input.value-&gt;修改表单值</span><br><span class="line">input.type-&gt;修改表单类型</span><br><span class="line">btn.disabled = false -&gt; 按钮可用</span><br><span class="line">checkbox.checked = true -&gt; 勾选复选框</span><br></pre></td></tr></table></figure>
+<h6 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let 变量名 = setInterval(函数,间隔时间)</span><br><span class="line">&lt;!-- 每个一段时间调用这个函数，函数不加小括号 --&gt;</span><br><span class="line">&lt;!-- 间隔时间为ms --&gt;</span><br><span class="line">clearInterval(变量名)</span><br></pre></td></tr></table></figure>
+<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><ul>
+<li>事件是编程时系统内发生的动作或者发生的事情</li>
+</ul>
+<h6 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h6><ul>
+<li>让程序检测是否有事件发生，一旦有事件触发，就立即调用一个函数做出响应，也成为注册事件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.addEventListener(&#x27;事件&#x27;,要执行的函数)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="事件监听三要素"><a href="#事件监听三要素" class="headerlink" title="事件监听三要素"></a>事件监听三要素</h6><ul>
+<li>事件源：哪个dom元素被事件触发了，要获取dom元素</li>
+<li>事件：用什么方式触发，比如鼠标单击click，鼠标经过mouseover</li>
+<li>事件调用的函数：要做什么事<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        let btn = document.querySelector(&#x27;button&#x27;)</span><br><span class="line">        btn.addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">            alert(&#x27;点击&#x27;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6><p><img src="/image/Snipaste_2022-07-24_18-23-38.png" alt="图片"></p>
+<h5 id="高级函数"><a href="#高级函数" class="headerlink" title="高级函数"></a>高级函数</h5><p>高级函数可以简单理解为函数的高级应用，JavaScript中函数可以被当成【值】来对待，基于这个特性实现函数的高级应用</p>
+<h6 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h6><p>常见：定时器，事件监听</p>
+<h5 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a>环境对象</h5><p>环境对象指的是函数内特殊的变量this，它代表着当前函数运行时所处的环境<br>作用：弄清楚this的指向，可以让我们的代码更简洁</p>
+<h4 id="DOM结点"><a href="#DOM结点" class="headerlink" title="DOM结点"></a>DOM结点</h4><h5 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h5><h6 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h6><p>1.元素节点<br>所有的标签 比如body,div<br>html是根节点<br>2.属性节点<br>所有的属性，比如href<br>3.文本节点<br>所有的文本</p>
+<h6 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父节点查找 --&gt;</span><br><span class="line">子元素.parentNode</span><br><span class="line">返回最近一级的父节点，找不到返回null</span><br><span class="line">&lt;!-- 子节点查找 --&gt;</span><br><span class="line">父元素.children //得到的是数组</span><br><span class="line">&lt;!-- 兄弟关系查找 --&gt;</span><br><span class="line">&lt;!-- 下一个兄弟节点 --&gt;</span><br><span class="line">nextElementSibling 属性</span><br><span class="line">&lt;!-- 上一个兄弟节点 --&gt;</span><br><span class="line">previousElmentSibling 属性</span><br></pre></td></tr></table></figure>
+<h6 id="增加节点"><a href="#增加节点" class="headerlink" title="增加节点"></a>增加节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&#x27;标签名&#x27;)</span><br><span class="line">&lt;!-- 追加节点 --&gt;</span><br><span class="line">&lt;!-- 插入到父元素的最后一个子元素 --&gt;</span><br><span class="line">父元素.appendChild(要插入的元素)</span><br><span class="line">&lt;!-- 插入到父元素中某个子元素的前面 --&gt;</span><br><span class="line">父元素.insertBefore(要插入的元素,在哪个元素前面)</span><br></pre></td></tr></table></figure>
+<h6 id="克隆和删除节点"><a href="#克隆和删除节点" class="headerlink" title="克隆和删除节点"></a>克隆和删除节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 克隆节点 --&gt;</span><br><span class="line">元素.cloneNode(布尔值)</span><br><span class="line">布尔值若为true，则代表克隆时会包含后代节点一起克隆</span><br><span class="line">若为false,则不代表后代节点</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 删除节点 --&gt;</span><br><span class="line">&lt;!-- 1.若一个节点在页面中已不需要时，可以删除它 --&gt;</span><br><span class="line">&lt;!-- 在Javascript中，原生DOM操作中，要删除必须通过父元素删除，否则删除失败 --&gt;</span><br><span class="line">父元素.removeChild(要删除的元素)</span><br></pre></td></tr></table></figure>
+<h5 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h5><p>类-&gt;对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let date = new Date()</span><br><span class="line">let date = new Date(&#x27;1949-10-01 18:30:00&#x27;) // 指定时间</span><br></pre></td></tr></table></figure>
+<h6 id="时间对象方法"><a href="#时间对象方法" class="headerlink" title="时间对象方法"></a>时间对象方法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getFullYear()获得年份</span><br><span class="line">getMouth()获得月份(0-11)</span><br><span class="line">getDate()获取月份的天数</span><br><span class="line">getDay()获得星期(0-6)</span><br><span class="line">GetHours()获得小时(0-23)</span><br><span class="line">getMinutes()获得分钟(0-59)</span><br><span class="line">getSeconds()获得秒(0-59)</span><br></pre></td></tr></table></figure>
+<h6 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h6><p>是指1970年01月01日00时00分00秒起到现在的毫秒数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 获取时间戳 --&gt;</span><br><span class="line">&lt;!-- 使用getTime方法 --&gt;</span><br><span class="line">let date = new Date()</span><br><span class="line">date.getTime()</span><br><span class="line">&lt;!-- 简写 --&gt;</span><br><span class="line">+new Date()</span><br><span class="line">&lt;!-- 第三种 --&gt;</span><br><span class="line">Date.now()</span><br></pre></td></tr></table></figure>
+<h5 id="事件对象-1"><a href="#事件对象-1" class="headerlink" title="事件对象"></a>事件对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">event,ev,e</span><br><span class="line">元素.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="事件对象常用属性"><a href="#事件对象常用属性" class="headerlink" title="事件对象常用属性"></a>事件对象常用属性</h6><ul>
+<li>type-&gt;获取当前的事件类型</li>
+<li>clientX&#x2F;clientY-&gt;获取光标相对于浏览器可见窗口左上角的位置</li>
+<li>offsetX&#x2F;offsetY-&gt;获取光标相对于当前DOM元素左上角的位置</li>
+<li>key-&gt;用户按下键盘的值</li>
+</ul>
+<h6 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h6><p>事件冒泡：当一个元素的事件被触发时，同样的事件将会在该元素的所有祖先元素中依次被触发<br>阻止事件流动:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">son.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line">            alert(1)</span><br><span class="line">            e.stopPropagation()</span><br><span class="line">            </span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<p>事件捕获：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOM.addEventListener(事件类型，事件处理函数，是否使用捕获机制)</span><br></pre></td></tr></table></figure>
+<h6 id="鼠标经过事件"><a href="#鼠标经过事件" class="headerlink" title="鼠标经过事件"></a>鼠标经过事件</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mouseover()和mouseout()会有冒泡效果</span><br><span class="line">mouseenter()和mouseleave()没有冒泡效果(推荐)</span><br></pre></td></tr></table></figure>
+<h6 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h6><h5 id="滚动时间和加载事件"><a href="#滚动时间和加载事件" class="headerlink" title="滚动时间和加载事件"></a>滚动时间和加载事件</h5><h6 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h6><p>事件名：scroll</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h6><p>加载外部资源(如图片，外联css和javascript)，加载完毕触发的事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;load&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="元素大小和位置"><a href="#元素大小和位置" class="headerlink" title="元素大小和位置"></a>元素大小和位置</h5><h6 id="scroll家族"><a href="#scroll家族" class="headerlink" title="scroll家族"></a>scroll家族</h6><p>可以用来检测页面滚动的距离<br>scrollWidth和scrollHeight，获取自身内容的宽和高<br>scrollTop和scrollLeft，获取元素向左向上滚出去看不到的距离，是可读写的属性</p>
+<!-- 复制不要给单位 -->
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line">            console.log(document.documentElement.scrollTop);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="offset家族"><a href="#offset家族" class="headerlink" title="offset家族"></a>offset家族</h6><p>获取宽高：<br>获取元素的自身高度、包含元素自身设置的宽高、padding、border<br>offsetWidth和offsetHeight<br>获取位置：<br>获取元素距离自己定位父级元素的左、上距离<br>offsetLeft和offsetTop 注意是只读属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop = neirongs[i].offsetTop</span><br></pre></td></tr></table></figure>
+<p><img src="/image/Snipaste_2022-07-27_11-09-45.png" alt="图片"></p>
+<h6 id="client家族"><a href="#client家族" class="headerlink" title="client家族"></a>client家族</h6><p>获取宽高：<br>获取元素的可见部分宽高(不包含边框，滚动条等)<br>clientWidth和clientHeight<br>获取位置：<br>clientLeft和clientTop得到上边框和左边框的宽度(只读属性)<br>窗口尺寸改变的时候触发事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 得到当前屏幕的尺寸 --&gt;</span><br><span class="line">window.addEventListener(&#x27;resize&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="/image/Snipaste_2022-07-27_16-40-38.png" alt="图片"></p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><p><img src="/image/Snipaste_2022-07-27_16-43-20.png" alt="图片"></p>
+<h5 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h5><ul>
+<li>BOM(浏览器对象模型)</li>
+<li>定时器-延迟函数</li>
+<li>JS执行机制</li>
+<li>location对象</li>
+<li>navigator对象</li>
+<li>history对象</li>
+</ul>
+<h6 id="BOM-Browser-Object-Model-是浏览器对象模型"><a href="#BOM-Browser-Object-Model-是浏览器对象模型" class="headerlink" title="BOM(Browser Object Model)是浏览器对象模型"></a>BOM(Browser Object Model)是浏览器对象模型</h6><p><img src="/image/Snipaste_2022-07-27_17-23-24.png" alt="图片"></p>
+<h6 id="定时器-延迟函数"><a href="#定时器-延迟函数" class="headerlink" title="定时器-延迟函数"></a>定时器-延迟函数</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">&lt;!-- 执行一次 --&gt;</span><br><span class="line">let timer = setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">clearTimeout(timer)</span><br></pre></td></tr></table></figure>
+<p><img src="/image/Snipaste_2022-07-27_17-58-43.png" alt="图片"></p>
+<h6 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javaScript语言的一大特点就是单线程，同一时间只能做一件事</span><br><span class="line">单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务</span><br></pre></td></tr></table></figure>
+<p>同步和异步：为了解决这个问题，利用多核CPU的计算能力,HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程。于是，JS中出现了同步和异步<br>同步：前一个任务结束后再执行后一个任务，程序的执行顺序与任务的排列顺序是一致的<br>异步：在做这件事的同时，可以去处理其他事情</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.先执行执行栈中的同步任务</span><br><span class="line">2.异步任务放入到任务队列中</span><br><span class="line">3.一旦执行栈中的所有同步任务执行完毕，系统会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。</span><br></pre></td></tr></table></figure>
+<h6 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h6><p>常见属性和方法<br>href属性获取完整的URL地址，对其赋值时用于地址的跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.href</span><br><span class="line">&lt;!-- 可以修改，实现页面跳转 --&gt;</span><br></pre></td></tr></table></figure>
+<p>search属性获取地址中携带的参数，符号?后面部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.search</span><br></pre></td></tr></table></figure>
+<p>hash属性返回获取地址中的哈希值，符号#后面部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.hash</span><br></pre></td></tr></table></figure>
+<p>reload方法用来刷新当前页面，传入参数true时表示刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.reload(true)</span><br></pre></td></tr></table></figure>
+<p>history对象<br>方法：<br>back()   &#x2F;&#x2F;后退功能<br>forward()&#x2F;&#x2F;前进功能<br>go(参数)  &#x2F;&#x2F;前进或后退,参数是1前进,参数是-1是后退</p>
+<h5 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h5><ul>
+<li>数据存储在用户浏览器中</li>
+<li>设置、读取方便、甚至页面刷新不会丢失数据</li>
+<li>容量较大，sessionStorage和localStorage约5M左右</li>
+</ul>
+<h6 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h6><ul>
+<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
+<li>可以多窗口共享</li>
+<li>以键值对的形式存储使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">存储数据：</span><br><span class="line">localStorage.setltem(key,value)</span><br><span class="line">获取数据：</span><br><span class="line">localStorage.getltem(key)</span><br><span class="line">删除数据：</span><br><span class="line">localStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
+<p>本地只能存储字符串，无法存储复杂数据类型。需要将复杂数据类型转换成JSON字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(复杂数据类型)</span><br><span class="line">将复杂数据类型转换成JSON字符串，存储在本地存储中</span><br><span class="line">JSON.parse(JSON字符串)</span><br><span class="line">将JSON字符串转换成对象，取出时候使用</span><br></pre></td></tr></table></figure>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
+<li>正则表达式(Regular Expression)是用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象</li>
+<li>通常用来查找、替换那些符合正则表达式的文本，许多语言都支持正则表达式<br>作用：<br>用于匹配字符串中字符组合的模式<br>表单验证<br>过滤敏感词<br>字符串提取我们想要的部分<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- let arr = /表达式/ --&gt;</span><br><span class="line">regObj.test(被检查的字符串)//返回值为true或false</span><br><span class="line">regObj.exec(被检测的字符串)//返回值为数组</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h6><p>边界符：’^’-&gt;表示匹配行首的文本,’$’表示匹配行尾的文本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/哈/.test(&#x27;哈哈&#x27;))</span><br><span class="line">console.log(/哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/^哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/哈$/.test(&#x27;二哈&#x27;))</span><br></pre></td></tr></table></figure>
+<p>量词：<br><img src="/image/Snipaste_2022-07-28_11-02-11.png" alt="图片"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a*/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a+/.test(&#x27;b&#x27;));</span><br><span class="line">console.log(/a?/.test(&#x27;b&#x27;));</span><br></pre></td></tr></table></figure>
+<p>字符类：<br>[]匹配字符合集<br>后面只要包含abc中任意一个字符，都返回true<br>[a-zA-Z0-9]不区分大小写<br>[1-9][0-9]{4,}-&gt;第一位1-9,第二位0-9,大于4位<br>[^a-z]-&gt;除小写字符<br><img src="/image/Snipaste_2022-07-28_11-53-57.png" alt="图片"><br>修饰符：<br>i是ignore的缩写，正则匹配时字母不区分大小写<br>g是global的意思，匹配所有满足正则表达式的结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/i.test(&#x27;a&#x27;))</span><br><span class="line">console.log(/a/i.test(&#x27;A&#x27;))</span><br><span class="line">&lt;!-- 替换 --&gt;</span><br><span class="line">字符串.replace(/正则表达式/,&#x27;替换的文本&#x27;)</span><br><span class="line">div.innerHTML = textarea.value.replace(/傻逼|基情/g,&#x27;**&#x27;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB_APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/" data-id="cl6x5ac4i000824ua5iaxh4ek" data-title="前端第03节，WEB_APIS的学习" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端第02节，CSS的学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/17/linux/">Linux基础</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/">PYTHON爬虫简单语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/Easyx%E4%BD%BF%E7%94%A8/">Easyx基本语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/latex/">Latex简单语法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/17/%E7%BA%A2%E9%BB%91%E6%A0%91/">红黑树</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
