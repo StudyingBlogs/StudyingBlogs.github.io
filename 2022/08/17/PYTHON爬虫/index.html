@@ -9,34 +9,17 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PYTHON爬虫requests的方法 Response对象的属性 Requests库的异常  HTTP协议HTTP,Hypertext Transfer Protocol,超文本传输协议。 HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。 HTTP协议采用URL作为定位网络资源的标识。 URL格式         http:&#x2F;&#x2F;host[:port][path]  host:合法的I">
+  <meta name="description" content="PYTHON爬虫requests的方法    Response对象的属性  Requests库的异常    HTTP协议HTTP,Hypertext Transfer Protocol,超文本传输协议。 HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。 HTTP协议采用URL作为定位网络资源的标识。 URL格式         http:&#x2F;&#x2F;host[:port][path]  hos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PYTHON爬虫简单语法">
 <meta property="og:url" content="http://example.com/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="PYTHON爬虫requests的方法 Response对象的属性 Requests库的异常  HTTP协议HTTP,Hypertext Transfer Protocol,超文本传输协议。 HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。 HTTP协议采用URL作为定位网络资源的标识。 URL格式         http:&#x2F;&#x2F;host[:port][path]  host:合法的I">
+<meta property="og:description" content="PYTHON爬虫requests的方法    Response对象的属性  Requests库的异常    HTTP协议HTTP,Hypertext Transfer Protocol,超文本传输协议。 HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。 HTTP协议采用URL作为定位网络资源的标识。 URL格式         http:&#x2F;&#x2F;host[:port][path]  hos">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/1.png">
-<meta property="og:image" content="http://example.com/images/2.png">
-<meta property="og:image" content="http://example.com/images/3.png">
-<meta property="og:image" content="http://example.com/images/4.png">
-<meta property="og:image" content="http://example.com/images/5.png">
-<meta property="og:image" content="http://example.com/images/6.png">
-<meta property="og:image" content="http://example.com/images/7.png">
-<meta property="og:image" content="http://example.com/images/8.png">
-<meta property="og:image" content="http://example.com/images/9.png">
-<meta property="og:image" content="http://example.com/images/10.png">
-<meta property="og:image" content="http://example.com/images/11.png">
-<meta property="og:image" content="http://example.com/images/12.png">
-<meta property="og:image" content="http://example.com/images/13.png">
-<meta property="og:image" content="http://example.com/images/14.png">
-<meta property="og:image" content="http://example.com/images/15.png">
-<meta property="og:image" content="http://example.com/images/16.png">
 <meta property="article:published_time" content="2022-08-17T03:44:30.400Z">
-<meta property="article:modified_time" content="2022-08-17T03:44:57.308Z">
+<meta property="article:modified_time" content="2022-08-17T09:29:55.380Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -202,10 +185,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="PYTHON爬虫"><a href="#PYTHON爬虫" class="headerlink" title="PYTHON爬虫"></a>PYTHON爬虫</h1><h2 id="requests的方法"><a href="#requests的方法" class="headerlink" title="requests的方法"></a>requests的方法</h2><p><img src="/images/1.png" alt="图片"></p>
-<h2 id="Response对象的属性"><a href="#Response对象的属性" class="headerlink" title="Response对象的属性"></a>Response对象的属性</h2><p><img src="/images/2.png" alt="图片"></p>
-<h2 id="Requests库的异常"><a href="#Requests库的异常" class="headerlink" title="Requests库的异常"></a>Requests库的异常</h2><p><img src="/images/3.png" alt="图片"></p>
-<p><img src="/images/4.png" alt="图片"></p>
+        <h1 id="PYTHON爬虫"><a href="#PYTHON爬虫" class="headerlink" title="PYTHON爬虫"></a>PYTHON爬虫</h1><h2 id="requests的方法"><a href="#requests的方法" class="headerlink" title="requests的方法"></a>requests的方法</h2>
+
+
+
+<h2 id="Response对象的属性"><a href="#Response对象的属性" class="headerlink" title="Response对象的属性"></a>Response对象的属性</h2>
+
+<h2 id="Requests库的异常"><a href="#Requests库的异常" class="headerlink" title="Requests库的异常"></a>Requests库的异常</h2>
+
+
+
 <h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>HTTP,Hypertext Transfer Protocol,超文本传输协议。</p>
 <p>HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。</p>
 <p>HTTP协议采用URL作为定位网络资源的标识。</p>
@@ -217,28 +206,40 @@
 </ul>
 <h3 id="HTTP-URL的理解"><a href="#HTTP-URL的理解" class="headerlink" title="HTTP URL的理解"></a>HTTP URL的理解</h3><p>URL是通过HTTP协议存取资源Internet路径，一个URL对应一个数据资源。</p>
 <h2 id="Beautiful-Soup库的理解"><a href="#Beautiful-Soup库的理解" class="headerlink" title="Beautiful Soup库的理解"></a>Beautiful Soup库的理解</h2><p>Beautiful Soup库是解析、遍历、维护“标签树”的功能库。</p>
-<p><img src="/images/5.png" alt="图片"></p>
+
+
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;http://python123.io/ws/demo.html&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line">demo = r.text</span><br><span class="line">soup = BeautifulSoup(demo,<span class="string">&quot;html.parser&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="标签树遍历"><a href="#标签树遍历" class="headerlink" title="标签树遍历"></a>标签树遍历</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> soup.body.children:</span><br><span class="line">	<span class="built_in">print</span>(child)</span><br><span class="line"><span class="comment"># 遍历儿子节点</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="标签树的下行遍历"><a href="#标签树的下行遍历" class="headerlink" title="标签树的下行遍历"></a>标签树的下行遍历</h4><p><img src="/images/6.png" alt="图片"></p>
-<h4 id="标签树的上行遍历"><a href="#标签树的上行遍历" class="headerlink" title="标签树的上行遍历"></a>标签树的上行遍历</h4><p><img src="/images/7.png" alt="图片"></p>
-<h4 id="标签树的平行遍历"><a href="#标签树的平行遍历" class="headerlink" title="标签树的平行遍历"></a>标签树的平行遍历</h4><p><img src="/images/8.png" alt="图片"></p>
+<h4 id="标签树的下行遍历"><a href="#标签树的下行遍历" class="headerlink" title="标签树的下行遍历"></a>标签树的下行遍历</h4>
+
+<h4 id="标签树的上行遍历"><a href="#标签树的上行遍历" class="headerlink" title="标签树的上行遍历"></a>标签树的上行遍历</h4>
+
+<h4 id="标签树的平行遍历"><a href="#标签树的平行遍历" class="headerlink" title="标签树的平行遍历"></a>标签树的平行遍历</h4>
+
 <h3 id="find查找"><a href="#find查找" class="headerlink" title="find查找"></a>find查找</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">&#x27;p&#x27;</span>,<span class="string">&#x27;course&#x27;</span>)</span><br><span class="line"><span class="comment"># 带有course属性的p标签</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/9.png" alt="图片"></p>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><img src="/images/10.png" alt="图片"></p>
-<p><img src="/images/11.png" alt="图片"></p>
+
+
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2>
+
+
+
 <h2 id="Re库基本使用"><a href="#Re库基本使用" class="headerlink" title="Re库基本使用"></a>Re库基本使用</h2><p>re库采用raw string类型表示正则表达式，表示为：r’text’(原生字符串类型)</p>
 <p>string类型，更繁琐</p>
-<h3 id="Re库主要功能函数"><a href="#Re库主要功能函数" class="headerlink" title="Re库主要功能函数"></a>Re库主要功能函数</h3><p><img src="/images/12.png" alt="图片"></p>
+<h3 id="Re库主要功能函数"><a href="#Re库主要功能函数" class="headerlink" title="Re库主要功能函数"></a>Re库主要功能函数</h3>
+
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = re.<span class="built_in">compile</span>(pattern,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 将正则表达式形式编译成正则表达式对象</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="re库的match对象"><a href="#re库的match对象" class="headerlink" title="re库的match对象"></a>re库的match对象</h4><p><img src="/images/13.png" alt="图片"></p>
-<p><img src="/images/14.png" alt="图片"></p>
-<h6 id="最小匹配操作符"><a href="#最小匹配操作符" class="headerlink" title="最小匹配操作符"></a>最小匹配操作符</h6><p><img src="/images/15.png" alt="图片"></p>
-<h2 id="Scrapy框架"><a href="#Scrapy框架" class="headerlink" title="Scrapy框架"></a>Scrapy框架</h2><p><img src="/images/16.png" alt="图片"></p>
+<h4 id="re库的match对象"><a href="#re库的match对象" class="headerlink" title="re库的match对象"></a>re库的match对象</h4>
+
+
+
+<h6 id="最小匹配操作符"><a href="#最小匹配操作符" class="headerlink" title="最小匹配操作符"></a>最小匹配操作符</h6>
+
+<h2 id="Scrapy框架"><a href="#Scrapy框架" class="headerlink" title="Scrapy框架"></a>Scrapy框架</h2>
+
 
       
     </div>
