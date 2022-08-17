@@ -148,6 +148,414 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-前端第03节，WEB-APIS的学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/" class="article-date">
+  	<time datetime="2022-08-17T09:47:11.000Z" itemprop="datePublished">2022-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+        前端第03节，WEB_APIS的学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-APIs"><a href="#Web-APIs" class="headerlink" title="Web APIs"></a>Web APIs</h1><h2 id="作用和分类"><a href="#作用和分类" class="headerlink" title="作用和分类"></a>作用和分类</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>使用JS去操作html和浏览器</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>DOM、BOM</p>
+<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>DOM是浏览器提供的一套专门用来操作网页内容的功能，开发网页内容特效和用户交互</p>
+<h5 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h5><p>将HTML文档以树状结构直观的表现出来，我们称之为文档或DOM树<br>描述网页内容关系的名词<br>作用：文档树直观的体现了标签与标签之间的关系</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-25_19-39-37.png" class title="图片">
+<h5 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h5><p>浏览器根据html标签生成的JS对象，把网页内容当作对象来处理</p>
+<h5 id="获取DOM元素"><a href="#获取DOM元素" class="headerlink" title="获取DOM元素"></a>获取DOM元素</h5><h6 id="根据css选择器来获取DOM元素"><a href="#根据css选择器来获取DOM元素" class="headerlink" title="根据css选择器来获取DOM元素"></a>根据css选择器来获取DOM元素</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 只能得到第一个元素 --&gt;</span><br><span class="line">document.querySelectorAll(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 获取所有元素 --&gt;</span><br><span class="line">&lt;!-- 返回得到对象集合 --&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="对象-innerText"><a href="#对象-innerText" class="headerlink" title="对象.innerText"></a>对象.innerText</h6><p>不识别标签</p>
+<h6 id="对象-innerHTML"><a href="#对象-innerHTML" class="headerlink" title="对象.innerHTML"></a>对象.innerHTML</h6><p>可以解析标签</p>
+<h6 id="通过style修改样式属性"><a href="#通过style修改样式属性" class="headerlink" title="通过style修改样式属性"></a>通过style修改样式属性</h6><p>对象.style.样式属性 &#x3D; 值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.style.backgroundImage = `url()`</span><br></pre></td></tr></table></figure>
+<h6 id="修改元素操作类"><a href="#修改元素操作类" class="headerlink" title="修改元素操作类"></a>修改元素操作类</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.className = &#x27;one active&#x27;</span><br></pre></td></tr></table></figure>
+<h6 id="操作类数组"><a href="#操作类数组" class="headerlink" title="操作类数组"></a>操作类数组</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">元素.classList.add(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 增加类 --&gt;</span><br><span class="line">元素.classList.remove(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 删除类 --&gt;</span><br><span class="line">元素.classList.toggle(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 切换类 --&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="修改表单属性"><a href="#修改表单属性" class="headerlink" title="修改表单属性"></a>修改表单属性</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input.value-&gt;修改表单值</span><br><span class="line">input.type-&gt;修改表单类型</span><br><span class="line">btn.disabled = false -&gt; 按钮可用</span><br><span class="line">checkbox.checked = true -&gt; 勾选复选框</span><br></pre></td></tr></table></figure>
+<h6 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let 变量名 = setInterval(函数,间隔时间)</span><br><span class="line">&lt;!-- 每个一段时间调用这个函数，函数不加小括号 --&gt;</span><br><span class="line">&lt;!-- 间隔时间为ms --&gt;</span><br><span class="line">clearInterval(变量名)</span><br></pre></td></tr></table></figure>
+<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><ul>
+<li>事件是编程时系统内发生的动作或者发生的事情</li>
+</ul>
+<h6 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h6><ul>
+<li>让程序检测是否有事件发生，一旦有事件触发，就立即调用一个函数做出响应，也成为注册事件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.addEventListener(&#x27;事件&#x27;,要执行的函数)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="事件监听三要素"><a href="#事件监听三要素" class="headerlink" title="事件监听三要素"></a>事件监听三要素</h6><ul>
+<li>事件源：哪个dom元素被事件触发了，要获取dom元素</li>
+<li>事件：用什么方式触发，比如鼠标单击click，鼠标经过mouseover</li>
+<li>事件调用的函数：要做什么事<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        let btn = document.querySelector(&#x27;button&#x27;)</span><br><span class="line">        btn.addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">            alert(&#x27;点击&#x27;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-24_18-23-38.png" class title="图片">
+<h5 id="高级函数"><a href="#高级函数" class="headerlink" title="高级函数"></a>高级函数</h5><p>高级函数可以简单理解为函数的高级应用，JavaScript中函数可以被当成【值】来对待，基于这个特性实现函数的高级应用</p>
+<h6 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h6><p>常见：定时器，事件监听</p>
+<h5 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a>环境对象</h5><p>环境对象指的是函数内特殊的变量this，它代表着当前函数运行时所处的环境<br>作用：弄清楚this的指向，可以让我们的代码更简洁</p>
+<h4 id="DOM结点"><a href="#DOM结点" class="headerlink" title="DOM结点"></a>DOM结点</h4><h5 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h5><h6 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h6><p>1.元素节点<br>所有的标签 比如body,div<br>html是根节点<br>2.属性节点<br>所有的属性，比如href<br>3.文本节点<br>所有的文本</p>
+<h6 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父节点查找 --&gt;</span><br><span class="line">子元素.parentNode</span><br><span class="line">返回最近一级的父节点，找不到返回null</span><br><span class="line">&lt;!-- 子节点查找 --&gt;</span><br><span class="line">父元素.children //得到的是数组</span><br><span class="line">&lt;!-- 兄弟关系查找 --&gt;</span><br><span class="line">&lt;!-- 下一个兄弟节点 --&gt;</span><br><span class="line">nextElementSibling 属性</span><br><span class="line">&lt;!-- 上一个兄弟节点 --&gt;</span><br><span class="line">previousElmentSibling 属性</span><br></pre></td></tr></table></figure>
+<h6 id="增加节点"><a href="#增加节点" class="headerlink" title="增加节点"></a>增加节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&#x27;标签名&#x27;)</span><br><span class="line">&lt;!-- 追加节点 --&gt;</span><br><span class="line">&lt;!-- 插入到父元素的最后一个子元素 --&gt;</span><br><span class="line">父元素.appendChild(要插入的元素)</span><br><span class="line">&lt;!-- 插入到父元素中某个子元素的前面 --&gt;</span><br><span class="line">父元素.insertBefore(要插入的元素,在哪个元素前面)</span><br></pre></td></tr></table></figure>
+<h6 id="克隆和删除节点"><a href="#克隆和删除节点" class="headerlink" title="克隆和删除节点"></a>克隆和删除节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 克隆节点 --&gt;</span><br><span class="line">元素.cloneNode(布尔值)</span><br><span class="line">布尔值若为true，则代表克隆时会包含后代节点一起克隆</span><br><span class="line">若为false,则不代表后代节点</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 删除节点 --&gt;</span><br><span class="line">&lt;!-- 1.若一个节点在页面中已不需要时，可以删除它 --&gt;</span><br><span class="line">&lt;!-- 在Javascript中，原生DOM操作中，要删除必须通过父元素删除，否则删除失败 --&gt;</span><br><span class="line">父元素.removeChild(要删除的元素)</span><br></pre></td></tr></table></figure>
+<h5 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h5><p>类-&gt;对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let date = new Date()</span><br><span class="line">let date = new Date(&#x27;1949-10-01 18:30:00&#x27;) // 指定时间</span><br></pre></td></tr></table></figure>
+<h6 id="时间对象方法"><a href="#时间对象方法" class="headerlink" title="时间对象方法"></a>时间对象方法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getFullYear()获得年份</span><br><span class="line">getMouth()获得月份(0-11)</span><br><span class="line">getDate()获取月份的天数</span><br><span class="line">getDay()获得星期(0-6)</span><br><span class="line">GetHours()获得小时(0-23)</span><br><span class="line">getMinutes()获得分钟(0-59)</span><br><span class="line">getSeconds()获得秒(0-59)</span><br></pre></td></tr></table></figure>
+<h6 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h6><p>是指1970年01月01日00时00分00秒起到现在的毫秒数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 获取时间戳 --&gt;</span><br><span class="line">&lt;!-- 使用getTime方法 --&gt;</span><br><span class="line">let date = new Date()</span><br><span class="line">date.getTime()</span><br><span class="line">&lt;!-- 简写 --&gt;</span><br><span class="line">+new Date()</span><br><span class="line">&lt;!-- 第三种 --&gt;</span><br><span class="line">Date.now()</span><br></pre></td></tr></table></figure>
+<h5 id="事件对象-1"><a href="#事件对象-1" class="headerlink" title="事件对象"></a>事件对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">event,ev,e</span><br><span class="line">元素.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="事件对象常用属性"><a href="#事件对象常用属性" class="headerlink" title="事件对象常用属性"></a>事件对象常用属性</h6><ul>
+<li>type-&gt;获取当前的事件类型</li>
+<li>clientX&#x2F;clientY-&gt;获取光标相对于浏览器可见窗口左上角的位置</li>
+<li>offsetX&#x2F;offsetY-&gt;获取光标相对于当前DOM元素左上角的位置</li>
+<li>key-&gt;用户按下键盘的值</li>
+</ul>
+<h6 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h6><p>事件冒泡：当一个元素的事件被触发时，同样的事件将会在该元素的所有祖先元素中依次被触发<br>阻止事件流动:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">son.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line">            alert(1)</span><br><span class="line">            e.stopPropagation()</span><br><span class="line">            </span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<p>事件捕获：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOM.addEventListener(事件类型，事件处理函数，是否使用捕获机制)</span><br></pre></td></tr></table></figure>
+<h6 id="鼠标经过事件"><a href="#鼠标经过事件" class="headerlink" title="鼠标经过事件"></a>鼠标经过事件</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mouseover()和mouseout()会有冒泡效果</span><br><span class="line">mouseenter()和mouseleave()没有冒泡效果(推荐)</span><br></pre></td></tr></table></figure>
+<h6 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h6><h5 id="滚动时间和加载事件"><a href="#滚动时间和加载事件" class="headerlink" title="滚动时间和加载事件"></a>滚动时间和加载事件</h5><h6 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h6><p>事件名：scroll</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h6><p>加载外部资源(如图片，外联css和javascript)，加载完毕触发的事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;load&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="元素大小和位置"><a href="#元素大小和位置" class="headerlink" title="元素大小和位置"></a>元素大小和位置</h5><h6 id="scroll家族"><a href="#scroll家族" class="headerlink" title="scroll家族"></a>scroll家族</h6><p>可以用来检测页面滚动的距离<br>scrollWidth和scrollHeight，获取自身内容的宽和高<br>scrollTop和scrollLeft，获取元素向左向上滚出去看不到的距离，是可读写的属性</p>
+<!-- 复制不要给单位 -->
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line">            console.log(document.documentElement.scrollTop);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h6 id="offset家族"><a href="#offset家族" class="headerlink" title="offset家族"></a>offset家族</h6><p>获取宽高：<br>获取元素的自身高度、包含元素自身设置的宽高、padding、border<br>offsetWidth和offsetHeight<br>获取位置：<br>获取元素距离自己定位父级元素的左、上距离<br>offsetLeft和offsetTop 注意是只读属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop = neirongs[i].offsetTop</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-27_11-09-45.png" class title="图片">
+<h6 id="client家族"><a href="#client家族" class="headerlink" title="client家族"></a>client家族</h6><p>获取宽高：<br>获取元素的可见部分宽高(不包含边框，滚动条等)<br>clientWidth和clientHeight<br>获取位置：<br>clientLeft和clientTop得到上边框和左边框的宽度(只读属性)<br>窗口尺寸改变的时候触发事件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 得到当前屏幕的尺寸 --&gt;</span><br><span class="line">window.addEventListener(&#x27;resize&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-27_16-40-38.png" class title="图片">
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-27_16-43-20.png" class title="图片">
+<h5 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h5><ul>
+<li>BOM(浏览器对象模型)</li>
+<li>定时器-延迟函数</li>
+<li>JS执行机制</li>
+<li>location对象</li>
+<li>navigator对象</li>
+<li>history对象</li>
+</ul>
+<h6 id="BOM-Browser-Object-Model-是浏览器对象模型"><a href="#BOM-Browser-Object-Model-是浏览器对象模型" class="headerlink" title="BOM(Browser Object Model)是浏览器对象模型"></a>BOM(Browser Object Model)是浏览器对象模型</h6><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-27_17-23-24.png" class title="图片">
+<h6 id="定时器-延迟函数"><a href="#定时器-延迟函数" class="headerlink" title="定时器-延迟函数"></a>定时器-延迟函数</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">&lt;!-- 执行一次 --&gt;</span><br><span class="line">let timer = setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">clearTimeout(timer)</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-27_17-58-43.png" class title="图片">
+<h6 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javaScript语言的一大特点就是单线程，同一时间只能做一件事</span><br><span class="line">单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务</span><br></pre></td></tr></table></figure>
+<p>同步和异步：为了解决这个问题，利用多核CPU的计算能力,HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程。于是，JS中出现了同步和异步<br>同步：前一个任务结束后再执行后一个任务，程序的执行顺序与任务的排列顺序是一致的<br>异步：在做这件事的同时，可以去处理其他事情</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.先执行执行栈中的同步任务</span><br><span class="line">2.异步任务放入到任务队列中</span><br><span class="line">3.一旦执行栈中的所有同步任务执行完毕，系统会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。</span><br></pre></td></tr></table></figure>
+<h6 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h6><p>常见属性和方法<br>href属性获取完整的URL地址，对其赋值时用于地址的跳转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.href</span><br><span class="line">&lt;!-- 可以修改，实现页面跳转 --&gt;</span><br></pre></td></tr></table></figure>
+<p>search属性获取地址中携带的参数，符号?后面部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.search</span><br></pre></td></tr></table></figure>
+<p>hash属性返回获取地址中的哈希值，符号#后面部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.hash</span><br></pre></td></tr></table></figure>
+<p>reload方法用来刷新当前页面，传入参数true时表示刷新</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.reload(true)</span><br></pre></td></tr></table></figure>
+<p>history对象<br>方法：<br>back()   &#x2F;&#x2F;后退功能<br>forward()&#x2F;&#x2F;前进功能<br>go(参数)  &#x2F;&#x2F;前进或后退,参数是1前进,参数是-1是后退</p>
+<h5 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h5><ul>
+<li>数据存储在用户浏览器中</li>
+<li>设置、读取方便、甚至页面刷新不会丢失数据</li>
+<li>容量较大，sessionStorage和localStorage约5M左右</li>
+</ul>
+<h6 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h6><ul>
+<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
+<li>可以多窗口共享</li>
+<li>以键值对的形式存储使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">存储数据：</span><br><span class="line">localStorage.setltem(key,value)</span><br><span class="line">获取数据：</span><br><span class="line">localStorage.getltem(key)</span><br><span class="line">删除数据：</span><br><span class="line">localStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
+<p>本地只能存储字符串，无法存储复杂数据类型。需要将复杂数据类型转换成JSON字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(复杂数据类型)</span><br><span class="line">将复杂数据类型转换成JSON字符串，存储在本地存储中</span><br><span class="line">JSON.parse(JSON字符串)</span><br><span class="line">将JSON字符串转换成对象，取出时候使用</span><br></pre></td></tr></table></figure>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
+<li>正则表达式(Regular Expression)是用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象</li>
+<li>通常用来查找、替换那些符合正则表达式的文本，许多语言都支持正则表达式<br>作用：<br>用于匹配字符串中字符组合的模式<br>表单验证<br>过滤敏感词<br>字符串提取我们想要的部分<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- let arr = /表达式/ --&gt;</span><br><span class="line">regObj.test(被检查的字符串)//返回值为true或false</span><br><span class="line">regObj.exec(被检测的字符串)//返回值为数组</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h6><p>边界符：’^’-&gt;表示匹配行首的文本,’$’表示匹配行尾的文本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/哈/.test(&#x27;哈哈&#x27;))</span><br><span class="line">console.log(/哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/^哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/哈$/.test(&#x27;二哈&#x27;))</span><br></pre></td></tr></table></figure>
+<p>量词：</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-28_11-02-11.png" class title="图片">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a*/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a+/.test(&#x27;b&#x27;));</span><br><span class="line">console.log(/a?/.test(&#x27;b&#x27;));</span><br></pre></td></tr></table></figure>
+<p>字符类：<br>[]匹配字符合集<br>后面只要包含abc中任意一个字符，都返回true<br>[a-zA-Z0-9]不区分大小写<br>[1-9][0-9]{4,}-&gt;第一位1-9,第二位0-9,大于4位<br>[^a-z]-&gt;除小写字符</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB-APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/Snipaste_2022-07-28_11-53-57.png" class title="图片">
+<p>修饰符：<br>i是ignore的缩写，正则匹配时字母不区分大小写<br>g是global的意思，匹配所有满足正则表达式的结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/i.test(&#x27;a&#x27;))</span><br><span class="line">console.log(/a/i.test(&#x27;A&#x27;))</span><br><span class="line">&lt;!-- 替换 --&gt;</span><br><span class="line">字符串.replace(/正则表达式/,&#x27;替换的文本&#x27;)</span><br><span class="line">div.innerHTML = textarea.value.replace(/傻逼|基情/g,&#x27;**&#x27;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-前端第02节，CSS的学习-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/" class="article-date">
+  	<time datetime="2022-08-17T09:46:45.000Z" itemprop="datePublished">2022-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/">
+        前端第02节，CSS的学习
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="css学习"><a href="#css学习" class="headerlink" title="css学习"></a>css学习</h1><h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>标签选择器、类选择器、id选择器和通配符选择器</p>
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">p</span> class=&quot;red ...&quot;&gt;有意思&lt;/<span class="selector-tag">p</span>&gt; class调用类，一个或多个调用,可以多个类名，方便修改，减少代码量</span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">p</span> id=&quot;name&quot;&gt;故事与酒&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line"><span class="selector-id">#name</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只能调用一次</p>
+<h4 id="通配符选择器，选择所有的元素"><a href="#通配符选择器，选择所有的元素" class="headerlink" title="通配符选择器，选择所有的元素"></a>通配符选择器，选择所有的元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h2><p>color、font-size、font-family,font-weight,font-style<br>font-family-&gt;字体选择,可选择多个字体，”,”分隔<br>font-weight:normal&#x2F;bold&#x2F;lighter&#x2F;选择数字,没有单位<br>bold-&gt;粗体,bolder-&gt;特粗,lighter-&gt;细<br>font-style-&gt;字体样式-&gt;斜体…,italic-&gt;斜体,normal-&gt;不倾斜,较少使用</p>
+<h3 id="复合使用"><a href="#复合使用" class="headerlink" title="复合使用"></a>复合使用</h3><p>不能颠倒顺序，空格隔开</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>: font-style font-weight font-size font-family;</span><br></pre></td></tr></table></figure>
+<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><p>color,text-align,text-decoration,text-indent,line-hight<br>text-align-&gt;用于水平对齐<br>text-decoration-&gt;装饰，默认none(链接去掉下滑线),加下划线underline、删除线line-throught、上划线overline等<br>text-indent-&gt;首行缩进，em-&gt;代表一个文字的大小<br>line-hight-&gt;行间距，行间距包括上边距、文本高度和下边距 </p>
+<h2 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h2><p>提高编写速度</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>*<span class="number">4</span></span><br><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span></span><br><span class="line"><span class="selector-tag">div</span>+<span class="selector-tag">p</span></span><br><span class="line"><span class="selector-class">.nav</span> == &lt;<span class="selector-tag">div</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.gray</span> == &lt;<span class="selector-tag">span</span> class=&quot;gray&quot;&gt;&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line"><span class="selector-class">.demo</span>$*<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h3><p>只能选择亲儿子</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>,<span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>伪类选择器用于某些选择器添加一些特殊的效果<br>最大的特点是用’:’表示，比如:hover,first-child</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将没有选过的链接选择出来 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将选择过的链接选择出来 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 鼠标经过的颜色(使用最多) */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 点击时的颜色 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">指向获得光标的表单元素</span><br></pre></td></tr></table></figure>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.顺序-&gt;link-visited-hover-active<br>2.链接在浏览器有默认的样式，所以实际工作中需要给链接单独的样式</p>
+<h2 id="元素的显示模式"><a href="#元素的显示模式" class="headerlink" title="元素的显示模式"></a>元素的显示模式</h2><p>块元素和行内元素<br>块级元素的特点：1.独占一行,2.宽度、高度、内外边距都可以控制，3.宽度默认是容器的100%，4.是一个容器及盒子，里面可以放行内或块级元素<br>注意事项：<br>文字类的元素内不能使用块级元素，p,h1-h6<br>行内元素的特点：1.一行可以显示多个 2.直接设置宽度和高度是无效的 3.宽度由本身决定 4.行内元素不能容纳块级元素<br>注意事项：<br>a里面不能在放a,a里面可以放块级元素<br>行内块元素特点：<br>img、input、td<br>1.一行可以显示多个，但是之间有空隙 2.默认宽度就是它本身的宽度 3.高度、行高、外边距以及内边距都可以控制。</p>
+<h3 id="转换："><a href="#转换：" class="headerlink" title="转换："></a>转换：</h3><p>行内元素转为块级元素：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>块级元素转化为行内元素：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>转换为行内块元素：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="文字垂直居中"><a href="#文字垂直居中" class="headerlink" title="文字垂直居中"></a>文字垂直居中</h2><p>行高等于盒子的高度</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>背景颜色，背景图片，背景平铺、背景图片位置、背景图片固定等。<br>background-color<br>background-image:background-image: url(1.jfif);<br>background-repeat:repeat-&gt;平铺，no-repeat-&gt;不平铺，repeat-x沿x轴平铺，repeat-y沿y轴平铺<br>background-position:x , y;背景图片的位置<br>背景固定：background-attachment:scroll(默认),fixed固定<br>background:rgba(0,0,0,0.3)-&gt;设置背景透明,0全透明，1不透明</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/bg.png" class title="图片">
+
+<h2 id="css三大特性"><a href="#css三大特性" class="headerlink" title="css三大特性"></a>css三大特性</h2><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>就近原则，解决冲突</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>孩子继承父亲，简化代码</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-15_21-44-04.png" class title="图片">
+<p>继承的权重为0</p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>包含：边框，外边距，内边距和实际内容</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-15_22-19-04.png" class title="图片">
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p>宽度，边框样式，边框颜色<br>border-width:大小<br>border-style：solid实线,dash虚线,dotted点线<br>border-color<br>复合式写法没有顺序<br>border-top…<br>border-collapse: collapse-&gt;合并单元格</p>
+<h5 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h5><p>盒子添加边框盒子大小增大</p>
+<h4 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h4><p>padding(top,left,bottom,right)<br>复合顺序：</p>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-15_22-37-26.png" class title="图片">
+<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项:"></a>注意事项:</h5><p>padding会影响盒子的实际大小，减去多出来的内边距<br>如果盒子本身没有指定的weight和height，则padding不会撑大盒子</p>
+<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p>margin(left,right,right,bottom)控制盒子之间的距离,简写方式与padding相似</p>
+<h4 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h4><p>盒子水平居中<br>1.盒子指定了宽度<br>2.盒子左右的外边距都设置为auto</p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>行内元素或者行内块元素居中需要给父亲元素添加text-align: center;</p>
+<h4 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h4><p>1.为父元素添加上边框<br>2.可以为父元素定义上内边框<br>3.可以给父亲添加overflow:hidden;</p>
+<h4 id="清楚内外边距"><a href="#清楚内外边距" class="headerlink" title="清楚内外边距"></a>清楚内外边距</h4><p>css的第一行代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="圆角矩形"><a href="#圆角矩形" class="headerlink" title="圆角矩形"></a>圆角矩形</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-16_20-28-07.png" class title="图片">
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> black;</span><br></pre></td></tr></table></figure>
+<p>阴影不占用空间</p>
+<h2 id="文字阴影-了解"><a href="#文字阴影-了解" class="headerlink" title="文字阴影(了解)"></a>文字阴影(了解)</h2><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-16_20-37-36.png" class title="图片">
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块级或另一个浮动框的边缘</p>
+<h3 id="浮动特性-重难点"><a href="#浮动特性-重难点" class="headerlink" title="浮动特性(重难点)"></a>浮动特性(重难点)</h3><p>1.浮动元素会脱离标准流</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.脱离标准普通流的控制移动到指定的位置</span><br><span class="line">2.浮动的盒子不在保留原有的位置</span><br></pre></td></tr></table></figure>
+<p>2.浮动的元素会一行内显示并且元素顶部对齐<br>3.浮动的元素会具有行内块的特性</p>
+<h3 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h3><p>1.浮动和标准流的父盒子搭配<br>2.一个盒子浮动了，理论上其余的兄弟元素也要浮动<br>3.父盒子不方便给高度时，需要清除浮动</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>清除浮动就是清除浮动元素造成的影响,如果父盒子本身有高度，则不需要清除浮动，清除浮动后，父级就会根据子盒子自动检测高度。父级有了高度，就不会影响下面的标准流。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear:both;</span><br></pre></td></tr></table></figure>
+<p>清除浮动的策略是，闭合浮动。</p>
+<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><p>1.额外标签法也称隔墙法，是W3C推荐的做法。<br>2.父级添加overflow属性(overflow:hidden,auto)<br>3.父级添加after伪元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    height: 0;</span><br><span class="line">    clear: both;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.父级添加双伪元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,clearfix:after&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after&#123;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br><span class="line">.clerafix&#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css书写顺序-重点"><a href="#css书写顺序-重点" class="headerlink" title="css书写顺序(重点)"></a>css书写顺序(重点)</h2><img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-17_11-42-40.png" class title="图片">
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>1.某个元素可以自由的在一个盒子内移动位置，并且压住其他盒子<br>2.当我们滚动窗口的时候，盒子是固定屏幕某个位置的<br>定位&#x3D;定位模式+边偏移</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span></span><br><span class="line"><span class="attribute">top</span>、<span class="attribute">bottom</span>、<span class="attribute">left</span>、<span class="attribute">right</span></span><br></pre></td></tr></table></figure>
+<img src="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0-1/Snipaste_2022-07-17_15-41-00.png" class title="图片">
+<h3 id="静态定位stalic-了解"><a href="#静态定位stalic-了解" class="headerlink" title="静态定位stalic(了解)"></a>静态定位stalic(了解)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: stalic;</span><br></pre></td></tr></table></figure>
+<h3 id="相对定位-relative-重要"><a href="#相对定位-relative-重要" class="headerlink" title="相对定位 relative(重要)"></a>相对定位 relative(重要)</h3><p>1.它是相对于自己原来的位置来移动的(移动位置的时候是参照自己原来的位置)<br>2.原来在标准流的位置继续占用，后面的盒子仍然以标准流的方式对待它。(不脱标，继续保留原来的位置)</p>
+<h3 id="绝对定位-absolute-重要"><a href="#绝对定位-absolute-重要" class="headerlink" title="绝对定位 absolute(重要)"></a>绝对定位 absolute(重要)</h3><p>1.如果没有祖先单位或者祖先单位没有定位，则以浏览器为准单位。<br>2.如果祖先元素有定位，则以最近一级的祖先元素为参考点移动位置<br>3.绝对定位不占有原来的位置(脱标);</p>
+<h3 id="子绝父相"><a href="#子绝父相" class="headerlink" title="子绝父相"></a>子绝父相</h3><h3 id="固定定位-fixed-重要"><a href="#固定定位-fixed-重要" class="headerlink" title="固定定位 fixed(重要)"></a>固定定位 fixed(重要)</h3><p>1.以浏览器的可视窗口为参展点移动元素。(跟父元素无关)<br>2.固定定位不在占有原来的位置</p>
+<h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><p>固定在版心右侧位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line"><span class="attribute">margin-left</span>: <span class="number">400px</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="粘性定位"><a href="#粘性定位" class="headerlink" title="粘性定位"></a>粘性定位</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>: sticky;<span class="attribute">top</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
+<p>1.以浏览器的可视窗口为参照点移动元素<br>2.粘性定位占有原先的位置<br>3.必须添加top、right、left、bottom</p>
+<h3 id="定位叠放顺序"><a href="#定位叠放顺序" class="headerlink" title="定位叠放顺序"></a>定位叠放顺序</h3><p>定位才有这个属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">z-index: 1;</span><br><span class="line">数值越大，越上面</span><br></pre></td></tr></table></figure>
+<h2 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h2><p>display:none;隐藏元素，也不占有位置<br>display:block;显示元素<br>visibility:inherit;<br>visibility:visible;显示<br>visibility:hidden;隐藏,保留位置<br>overflow溢出的显示与否<br>默认是visible，hidden隐藏,scroll显示滚动条,auto需要的时候添加滚动条</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-PYTHON爬虫-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/" class="article-date">
+  	<time datetime="2022-08-17T09:40:38.000Z" itemprop="datePublished">2022-08-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/">
+        PYTHON爬虫
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PYTHON爬虫"><a href="#PYTHON爬虫" class="headerlink" title="PYTHON爬虫"></a>PYTHON爬虫</h1><h2 id="requests的方法"><a href="#requests的方法" class="headerlink" title="requests的方法"></a>requests的方法</h2><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/1.png" class title="图片">
+
+<h2 id="Response对象的属性"><a href="#Response对象的属性" class="headerlink" title="Response对象的属性"></a>Response对象的属性</h2><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/2.png" class title="图片">
+
+<h2 id="Requests库的异常"><a href="#Requests库的异常" class="headerlink" title="Requests库的异常"></a>Requests库的异常</h2><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/3.png" class title="图片">
+
+<img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/4.png" class title="图片">
+
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>HTTP,Hypertext Transfer Protocol,超文本传输协议。</p>
+<p>HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。</p>
+<p>HTTP协议采用URL作为定位网络资源的标识。</p>
+<p>URL格式         <a href="http://host[:port][path]">http://host[:port][path]</a></p>
+<ul>
+<li>host:合法的Internet主机域名或IP地址</li>
+<li>port:端口号，缺省端口为80</li>
+<li>path:请求资源的路径</li>
+</ul>
+<h3 id="HTTP-URL的理解"><a href="#HTTP-URL的理解" class="headerlink" title="HTTP URL的理解"></a>HTTP URL的理解</h3><p>URL是通过HTTP协议存取资源Internet路径，一个URL对应一个数据资源。</p>
+<h2 id="Beautiful-Soup库的理解"><a href="#Beautiful-Soup库的理解" class="headerlink" title="Beautiful Soup库的理解"></a>Beautiful Soup库的理解</h2><p>Beautiful Soup库是解析、遍历、维护“标签树”的功能库。</p>
+<img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/5.png" class title="图片">
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;http://python123.io/ws/demo.html&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line">demo = r.text</span><br><span class="line">soup = BeautifulSoup(demo,<span class="string">&quot;html.parser&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="标签树遍历"><a href="#标签树遍历" class="headerlink" title="标签树遍历"></a>标签树遍历</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> soup.body.children:</span><br><span class="line">	<span class="built_in">print</span>(child)</span><br><span class="line"><span class="comment"># 遍历儿子节点</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="标签树的下行遍历"><a href="#标签树的下行遍历" class="headerlink" title="标签树的下行遍历"></a>标签树的下行遍历</h4><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/6.png" class title="图片">
+
+<h4 id="标签树的上行遍历"><a href="#标签树的上行遍历" class="headerlink" title="标签树的上行遍历"></a>标签树的上行遍历</h4><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/7.png" class title="图片">
+
+<h4 id="标签树的平行遍历"><a href="#标签树的平行遍历" class="headerlink" title="标签树的平行遍历"></a>标签树的平行遍历</h4><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/8.png" class title="图片">
+
+<h3 id="find查找"><a href="#find查找" class="headerlink" title="find查找"></a>find查找</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">&#x27;p&#x27;</span>,<span class="string">&#x27;course&#x27;</span>)</span><br><span class="line"><span class="comment"># 带有course属性的p标签</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/9.png" class title="图片">
+
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/10.png" class title="图片">
+
+<img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/11.png" class title="图片">
+
+<h2 id="Re库基本使用"><a href="#Re库基本使用" class="headerlink" title="Re库基本使用"></a>Re库基本使用</h2><p>re库采用raw string类型表示正则表达式，表示为：r’text’(原生字符串类型)</p>
+<p>string类型，更繁琐</p>
+<h3 id="Re库主要功能函数"><a href="#Re库主要功能函数" class="headerlink" title="Re库主要功能函数"></a>Re库主要功能函数</h3><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/12.png" class title="图片">
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = re.<span class="built_in">compile</span>(pattern,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 将正则表达式形式编译成正则表达式对象</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="re库的match对象"><a href="#re库的match对象" class="headerlink" title="re库的match对象"></a>re库的match对象</h4><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/13.png" class title="图片">
+
+<img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/14.png" class title="图片">
+
+<h6 id="最小匹配操作符"><a href="#最小匹配操作符" class="headerlink" title="最小匹配操作符"></a>最小匹配操作符</h6><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/15.png" class title="图片">
+
+<h2 id="Scrapy框架"><a href="#Scrapy框架" class="headerlink" title="Scrapy框架"></a>Scrapy框架</h2><img src="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB-1/16.png" class title="图片">
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -226,115 +634,6 @@
 <li>5:图形界面</li>
 <li>6:系统重启</li>
 </ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-PYTHON爬虫" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/" class="article-date">
-  	<time datetime="2022-08-17T03:44:30.400Z" itemprop="datePublished">2022-08-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/17/PYTHON%E7%88%AC%E8%99%AB/">
-        PYTHON爬虫简单语法
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="PYTHON爬虫"><a href="#PYTHON爬虫" class="headerlink" title="PYTHON爬虫"></a>PYTHON爬虫</h1><h2 id="requests的方法"><a href="#requests的方法" class="headerlink" title="requests的方法"></a>requests的方法</h2>
-
-
-
-<h2 id="Response对象的属性"><a href="#Response对象的属性" class="headerlink" title="Response对象的属性"></a>Response对象的属性</h2>
-
-<h2 id="Requests库的异常"><a href="#Requests库的异常" class="headerlink" title="Requests库的异常"></a>Requests库的异常</h2>
-
-
-
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>HTTP,Hypertext Transfer Protocol,超文本传输协议。</p>
-<p>HTTP是一个基于”请求与响应”模式的、无状态的应用层协议。</p>
-<p>HTTP协议采用URL作为定位网络资源的标识。</p>
-<p>URL格式         <a href="http://host[:port][path]">http://host[:port][path]</a></p>
-<ul>
-<li>host:合法的Internet主机域名或IP地址</li>
-<li>port:端口号，缺省端口为80</li>
-<li>path:请求资源的路径</li>
-</ul>
-<h3 id="HTTP-URL的理解"><a href="#HTTP-URL的理解" class="headerlink" title="HTTP URL的理解"></a>HTTP URL的理解</h3><p>URL是通过HTTP协议存取资源Internet路径，一个URL对应一个数据资源。</p>
-<h2 id="Beautiful-Soup库的理解"><a href="#Beautiful-Soup库的理解" class="headerlink" title="Beautiful Soup库的理解"></a>Beautiful Soup库的理解</h2><p>Beautiful Soup库是解析、遍历、维护“标签树”的功能库。</p>
-
-
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url = <span class="string">&quot;http://python123.io/ws/demo.html&quot;</span></span><br><span class="line">r = requests.get(url)</span><br><span class="line">demo = r.text</span><br><span class="line">soup = BeautifulSoup(demo,<span class="string">&quot;html.parser&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="标签树遍历"><a href="#标签树遍历" class="headerlink" title="标签树遍历"></a>标签树遍历</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> child <span class="keyword">in</span> soup.body.children:</span><br><span class="line">	<span class="built_in">print</span>(child)</span><br><span class="line"><span class="comment"># 遍历儿子节点</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="标签树的下行遍历"><a href="#标签树的下行遍历" class="headerlink" title="标签树的下行遍历"></a>标签树的下行遍历</h4>
-
-<h4 id="标签树的上行遍历"><a href="#标签树的上行遍历" class="headerlink" title="标签树的上行遍历"></a>标签树的上行遍历</h4>
-
-<h4 id="标签树的平行遍历"><a href="#标签树的平行遍历" class="headerlink" title="标签树的平行遍历"></a>标签树的平行遍历</h4>
-
-<h3 id="find查找"><a href="#find查找" class="headerlink" title="find查找"></a>find查找</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all(<span class="string">&#x27;p&#x27;</span>,<span class="string">&#x27;course&#x27;</span>)</span><br><span class="line"><span class="comment"># 带有course属性的p标签</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2>
-
-
-
-<h2 id="Re库基本使用"><a href="#Re库基本使用" class="headerlink" title="Re库基本使用"></a>Re库基本使用</h2><p>re库采用raw string类型表示正则表达式，表示为：r’text’(原生字符串类型)</p>
-<p>string类型，更繁琐</p>
-<h3 id="Re库主要功能函数"><a href="#Re库主要功能函数" class="headerlink" title="Re库主要功能函数"></a>Re库主要功能函数</h3>
-
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = re.<span class="built_in">compile</span>(pattern,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment"># 将正则表达式形式编译成正则表达式对象</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="re库的match对象"><a href="#re库的match对象" class="headerlink" title="re库的match对象"></a>re库的match对象</h4>
-
-
-
-<h6 id="最小匹配操作符"><a href="#最小匹配操作符" class="headerlink" title="最小匹配操作符"></a>最小匹配操作符</h6>
-
-<h2 id="Scrapy框架"><a href="#Scrapy框架" class="headerlink" title="Scrapy框架"></a>Scrapy框架</h2>
-
 
       
     </div>
@@ -657,306 +956,6 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;sex&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;sex&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>select-&gt;下拉选择，嵌套option<br>textarea-&gt;文本域，评论留言</p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-前端第02节，CSS的学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0/" class="article-date">
-  	<time datetime="2022-08-17T02:30:45.162Z" itemprop="datePublished">2022-08-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC02%E8%8A%82%EF%BC%8CCSS%E7%9A%84%E5%AD%A6%E4%B9%A0/">
-        前端第02节，CSS的学习
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="css学习"><a href="#css学习" class="headerlink" title="css学习"></a>css学习</h1><h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>标签选择器、类选择器、id选择器和通配符选择器</p>
-<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">p</span> class=&quot;red ...&quot;&gt;有意思&lt;/<span class="selector-tag">p</span>&gt; class调用类，一个或多个调用,可以多个类名，方便修改，减少代码量</span><br><span class="line"><span class="selector-class">.red</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">p</span> id=&quot;name&quot;&gt;故事与酒&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line"><span class="selector-id">#name</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只能调用一次</p>
-<h4 id="通配符选择器，选择所有的元素"><a href="#通配符选择器，选择所有的元素" class="headerlink" title="通配符选择器，选择所有的元素"></a>通配符选择器，选择所有的元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h2><p>color、font-size、font-family,font-weight,font-style<br>font-family-&gt;字体选择,可选择多个字体，”,”分隔<br>font-weight:normal&#x2F;bold&#x2F;lighter&#x2F;选择数字,没有单位<br>bold-&gt;粗体,bolder-&gt;特粗,lighter-&gt;细<br>font-style-&gt;字体样式-&gt;斜体…,italic-&gt;斜体,normal-&gt;不倾斜,较少使用</p>
-<h3 id="复合使用"><a href="#复合使用" class="headerlink" title="复合使用"></a>复合使用</h3><p>不能颠倒顺序，空格隔开</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>: font-style font-weight font-size font-family;</span><br></pre></td></tr></table></figure>
-<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><p>color,text-align,text-decoration,text-indent,line-hight<br>text-align-&gt;用于水平对齐<br>text-decoration-&gt;装饰，默认none(链接去掉下滑线),加下划线underline、删除线line-throught、上划线overline等<br>text-indent-&gt;首行缩进，em-&gt;代表一个文字的大小<br>line-hight-&gt;行间距，行间距包括上边距、文本高度和下边距 </p>
-<h2 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h2><p>提高编写速度</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>*<span class="number">4</span></span><br><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span></span><br><span class="line"><span class="selector-tag">div</span>+<span class="selector-tag">p</span></span><br><span class="line"><span class="selector-class">.nav</span> == &lt;<span class="selector-tag">div</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.gray</span> == &lt;<span class="selector-tag">span</span> class=&quot;gray&quot;&gt;&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line"><span class="selector-class">.demo</span>$*<span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h3><p>只能选择亲儿子</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&gt;<span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>,<span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>伪类选择器用于某些选择器添加一些特殊的效果<br>最大的特点是用’:’表示，比如:hover,first-child</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将没有选过的链接选择出来 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将选择过的链接选择出来 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 鼠标经过的颜色(使用最多) */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 点击时的颜色 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line">指向获得光标的表单元素</span><br></pre></td></tr></table></figure>
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>1.顺序-&gt;link-visited-hover-active<br>2.链接在浏览器有默认的样式，所以实际工作中需要给链接单独的样式</p>
-<h2 id="元素的显示模式"><a href="#元素的显示模式" class="headerlink" title="元素的显示模式"></a>元素的显示模式</h2><p>块元素和行内元素<br>块级元素的特点：1.独占一行,2.宽度、高度、内外边距都可以控制，3.宽度默认是容器的100%，4.是一个容器及盒子，里面可以放行内或块级元素<br>注意事项：<br>文字类的元素内不能使用块级元素，p,h1-h6<br>行内元素的特点：1.一行可以显示多个 2.直接设置宽度和高度是无效的 3.宽度由本身决定 4.行内元素不能容纳块级元素<br>注意事项：<br>a里面不能在放a,a里面可以放块级元素<br>行内块元素特点：<br>img、input、td<br>1.一行可以显示多个，但是之间有空隙 2.默认宽度就是它本身的宽度 3.高度、行高、外边距以及内边距都可以控制。</p>
-<h3 id="转换："><a href="#转换：" class="headerlink" title="转换："></a>转换：</h3><p>行内元素转为块级元素：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>块级元素转化为行内元素：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: red;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>转换为行内块元素：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文字垂直居中"><a href="#文字垂直居中" class="headerlink" title="文字垂直居中"></a>文字垂直居中</h2><p>行高等于盒子的高度</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>背景颜色，背景图片，背景平铺、背景图片位置、背景图片固定等。<br>background-color<br>background-image:background-image: url(1.jfif);<br>background-repeat:repeat-&gt;平铺，no-repeat-&gt;不平铺，repeat-x沿x轴平铺，repeat-y沿y轴平铺<br>background-position:x , y;背景图片的位置<br>背景固定：background-attachment:scroll(默认),fixed固定<br>background:rgba(0,0,0,0.3)-&gt;设置背景透明,0全透明，1不透明</p>
-
-
-<h2 id="css三大特性"><a href="#css三大特性" class="headerlink" title="css三大特性"></a>css三大特性</h2><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>就近原则，解决冲突</p>
-<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>孩子继承父亲，简化代码</p>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3>
-<p>继承的权重为0</p>
-<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>包含：边框，外边距，内边距和实际内容</p>
-
-<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p>宽度，边框样式，边框颜色<br>border-width:大小<br>border-style：solid实线,dash虚线,dotted点线<br>border-color<br>复合式写法没有顺序<br>border-top…<br>border-collapse: collapse-&gt;合并单元格</p>
-<h5 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h5><p>盒子添加边框盒子大小增大</p>
-<h4 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h4><p>padding(top,left,bottom,right)<br>复合顺序：</p>
-
-<h5 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项:"></a>注意事项:</h5><p>padding会影响盒子的实际大小，减去多出来的内边距<br>如果盒子本身没有指定的weight和height，则padding不会撑大盒子</p>
-<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p>margin(left,right,right,bottom)控制盒子之间的距离,简写方式与padding相似</p>
-<h4 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h4><p>盒子水平居中<br>1.盒子指定了宽度<br>2.盒子左右的外边距都设置为auto</p>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>行内元素或者行内块元素居中需要给父亲元素添加text-align: center;</p>
-<h4 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h4><p>1.为父元素添加上边框<br>2.可以为父元素定义上内边框<br>3.可以给父亲添加overflow:hidden;</p>
-<h4 id="清楚内外边距"><a href="#清楚内外边距" class="headerlink" title="清楚内外边距"></a>清楚内外边距</h4><p>css的第一行代码</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="圆角矩形"><a href="#圆角矩形" class="headerlink" title="圆角矩形"></a>圆角矩形</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> black;</span><br></pre></td></tr></table></figure>
-<p>阴影不占用空间</p>
-<h2 id="文字阴影-了解"><a href="#文字阴影-了解" class="headerlink" title="文字阴影(了解)"></a>文字阴影(了解)</h2>
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块级或另一个浮动框的边缘</p>
-<h3 id="浮动特性-重难点"><a href="#浮动特性-重难点" class="headerlink" title="浮动特性(重难点)"></a>浮动特性(重难点)</h3><p>1.浮动元素会脱离标准流</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.脱离标准普通流的控制移动到指定的位置</span><br><span class="line">2.浮动的盒子不在保留原有的位置</span><br></pre></td></tr></table></figure>
-<p>2.浮动的元素会一行内显示并且元素顶部对齐<br>3.浮动的元素会具有行内块的特性</p>
-<h3 id="注意事项-2"><a href="#注意事项-2" class="headerlink" title="注意事项"></a>注意事项</h3><p>1.浮动和标准流的父盒子搭配<br>2.一个盒子浮动了，理论上其余的兄弟元素也要浮动<br>3.父盒子不方便给高度时，需要清除浮动</p>
-<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>清除浮动就是清除浮动元素造成的影响,如果父盒子本身有高度，则不需要清除浮动，清除浮动后，父级就会根据子盒子自动检测高度。父级有了高度，就不会影响下面的标准流。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear:both;</span><br></pre></td></tr></table></figure>
-<p>清除浮动的策略是，闭合浮动。</p>
-<h4 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h4><p>1.额外标签法也称隔墙法，是W3C推荐的做法。<br>2.父级添加overflow属性(overflow:hidden,auto)<br>3.父级添加after伪元素</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: block;</span><br><span class="line">    height: 0;</span><br><span class="line">    clear: both;</span><br><span class="line">    visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.父级添加双伪元素。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,clearfix:after&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after&#123;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br><span class="line">.clerafix&#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="css书写顺序-重点"><a href="#css书写顺序-重点" class="headerlink" title="css书写顺序(重点)"></a>css书写顺序(重点)</h2>
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>1.某个元素可以自由的在一个盒子内移动位置，并且压住其他盒子<br>2.当我们滚动窗口的时候，盒子是固定屏幕某个位置的<br>定位&#x3D;定位模式+边偏移</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span></span><br><span class="line"><span class="attribute">top</span>、<span class="attribute">bottom</span>、<span class="attribute">left</span>、<span class="attribute">right</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="静态定位stalic-了解"><a href="#静态定位stalic-了解" class="headerlink" title="静态定位stalic(了解)"></a>静态定位stalic(了解)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: stalic;</span><br></pre></td></tr></table></figure>
-<h3 id="相对定位-relative-重要"><a href="#相对定位-relative-重要" class="headerlink" title="相对定位 relative(重要)"></a>相对定位 relative(重要)</h3><p>1.它是相对于自己原来的位置来移动的(移动位置的时候是参照自己原来的位置)<br>2.原来在标准流的位置继续占用，后面的盒子仍然以标准流的方式对待它。(不脱标，继续保留原来的位置)</p>
-<h3 id="绝对定位-absolute-重要"><a href="#绝对定位-absolute-重要" class="headerlink" title="绝对定位 absolute(重要)"></a>绝对定位 absolute(重要)</h3><p>1.如果没有祖先单位或者祖先单位没有定位，则以浏览器为准单位。<br>2.如果祖先元素有定位，则以最近一级的祖先元素为参考点移动位置<br>3.绝对定位不占有原来的位置(脱标);</p>
-<h3 id="子绝父相"><a href="#子绝父相" class="headerlink" title="子绝父相"></a>子绝父相</h3><h3 id="固定定位-fixed-重要"><a href="#固定定位-fixed-重要" class="headerlink" title="固定定位 fixed(重要)"></a>固定定位 fixed(重要)</h3><p>1.以浏览器的可视窗口为参展点移动元素。(跟父元素无关)<br>2.固定定位不在占有原来的位置</p>
-<h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><p>固定在版心右侧位置</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line"><span class="attribute">margin-left</span>: <span class="number">400px</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="粘性定位"><a href="#粘性定位" class="headerlink" title="粘性定位"></a>粘性定位</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>: sticky;<span class="attribute">top</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
-<p>1.以浏览器的可视窗口为参照点移动元素<br>2.粘性定位占有原先的位置<br>3.必须添加top、right、left、bottom</p>
-<h3 id="定位叠放顺序"><a href="#定位叠放顺序" class="headerlink" title="定位叠放顺序"></a>定位叠放顺序</h3><p>定位才有这个属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">z-index: 1;</span><br><span class="line">数值越大，越上面</span><br></pre></td></tr></table></figure>
-<h2 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h2><p>display:none;隐藏元素，也不占有位置<br>display:block;显示元素<br>visibility:inherit;<br>visibility:visible;显示<br>visibility:hidden;隐藏,保留位置<br>overflow溢出的显示与否<br>默认是visible，hidden隐藏,scroll显示滚动条,auto需要的时候添加滚动条</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-前端第03节，WEB_APIS的学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB_APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/" class="article-date">
-  	<time datetime="2022-08-17T02:30:45.161Z" itemprop="datePublished">2022-08-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/17/%E5%89%8D%E7%AB%AF%E7%AC%AC03%E8%8A%82%EF%BC%8CWEB_APIS%E7%9A%84%E5%AD%A6%E4%B9%A0/">
-        前端第03节，WEB_APIS的学习
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Web-APIs"><a href="#Web-APIs" class="headerlink" title="Web APIs"></a>Web APIs</h1><h2 id="作用和分类"><a href="#作用和分类" class="headerlink" title="作用和分类"></a>作用和分类</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>使用JS去操作html和浏览器</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>DOM、BOM</p>
-<h4 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h4><p>DOM是浏览器提供的一套专门用来操作网页内容的功能，开发网页内容特效和用户交互</p>
-<h5 id="DOM树"><a href="#DOM树" class="headerlink" title="DOM树"></a>DOM树</h5><p>将HTML文档以树状结构直观的表现出来，我们称之为文档或DOM树<br>描述网页内容关系的名词<br>作用：文档树直观的体现了标签与标签之间的关系</p>
-
-<h5 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h5><p>浏览器根据html标签生成的JS对象，把网页内容当作对象来处理</p>
-<h5 id="获取DOM元素"><a href="#获取DOM元素" class="headerlink" title="获取DOM元素"></a>获取DOM元素</h5><h6 id="根据css选择器来获取DOM元素"><a href="#根据css选择器来获取DOM元素" class="headerlink" title="根据css选择器来获取DOM元素"></a>根据css选择器来获取DOM元素</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 只能得到第一个元素 --&gt;</span><br><span class="line">document.querySelectorAll(&#x27;css选择器&#x27;)</span><br><span class="line">&lt;!-- 获取所有元素 --&gt;</span><br><span class="line">&lt;!-- 返回得到对象集合 --&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="对象-innerText"><a href="#对象-innerText" class="headerlink" title="对象.innerText"></a>对象.innerText</h6><p>不识别标签</p>
-<h6 id="对象-innerHTML"><a href="#对象-innerHTML" class="headerlink" title="对象.innerHTML"></a>对象.innerHTML</h6><p>可以解析标签</p>
-<h6 id="通过style修改样式属性"><a href="#通过style修改样式属性" class="headerlink" title="通过style修改样式属性"></a>通过style修改样式属性</h6><p>对象.style.样式属性 &#x3D; 值</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.style.backgroundImage = `url()`</span><br></pre></td></tr></table></figure>
-<h6 id="修改元素操作类"><a href="#修改元素操作类" class="headerlink" title="修改元素操作类"></a>修改元素操作类</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.className = &#x27;one active&#x27;</span><br></pre></td></tr></table></figure>
-<h6 id="操作类数组"><a href="#操作类数组" class="headerlink" title="操作类数组"></a>操作类数组</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">元素.classList.add(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 增加类 --&gt;</span><br><span class="line">元素.classList.remove(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 删除类 --&gt;</span><br><span class="line">元素.classList.toggle(&#x27;类名&#x27;)</span><br><span class="line">&lt;!-- 切换类 --&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="修改表单属性"><a href="#修改表单属性" class="headerlink" title="修改表单属性"></a>修改表单属性</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input.value-&gt;修改表单值</span><br><span class="line">input.type-&gt;修改表单类型</span><br><span class="line">btn.disabled = false -&gt; 按钮可用</span><br><span class="line">checkbox.checked = true -&gt; 勾选复选框</span><br></pre></td></tr></table></figure>
-<h6 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let 变量名 = setInterval(函数,间隔时间)</span><br><span class="line">&lt;!-- 每个一段时间调用这个函数，函数不加小括号 --&gt;</span><br><span class="line">&lt;!-- 间隔时间为ms --&gt;</span><br><span class="line">clearInterval(变量名)</span><br></pre></td></tr></table></figure>
-<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><ul>
-<li>事件是编程时系统内发生的动作或者发生的事情</li>
-</ul>
-<h6 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h6><ul>
-<li>让程序检测是否有事件发生，一旦有事件触发，就立即调用一个函数做出响应，也成为注册事件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.addEventListener(&#x27;事件&#x27;,要执行的函数)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h6 id="事件监听三要素"><a href="#事件监听三要素" class="headerlink" title="事件监听三要素"></a>事件监听三要素</h6><ul>
-<li>事件源：哪个dom元素被事件触发了，要获取dom元素</li>
-<li>事件：用什么方式触发，比如鼠标单击click，鼠标经过mouseover</li>
-<li>事件调用的函数：要做什么事<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        let btn = document.querySelector(&#x27;button&#x27;)</span><br><span class="line">        btn.addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">            alert(&#x27;点击&#x27;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h6 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h6>
-<h5 id="高级函数"><a href="#高级函数" class="headerlink" title="高级函数"></a>高级函数</h5><p>高级函数可以简单理解为函数的高级应用，JavaScript中函数可以被当成【值】来对待，基于这个特性实现函数的高级应用</p>
-<h6 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h6><p>常见：定时器，事件监听</p>
-<h5 id="环境对象"><a href="#环境对象" class="headerlink" title="环境对象"></a>环境对象</h5><p>环境对象指的是函数内特殊的变量this，它代表着当前函数运行时所处的环境<br>作用：弄清楚this的指向，可以让我们的代码更简洁</p>
-<h4 id="DOM结点"><a href="#DOM结点" class="headerlink" title="DOM结点"></a>DOM结点</h4><h5 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h5><h6 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h6><p>1.元素节点<br>所有的标签 比如body,div<br>html是根节点<br>2.属性节点<br>所有的属性，比如href<br>3.文本节点<br>所有的文本</p>
-<h6 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父节点查找 --&gt;</span><br><span class="line">子元素.parentNode</span><br><span class="line">返回最近一级的父节点，找不到返回null</span><br><span class="line">&lt;!-- 子节点查找 --&gt;</span><br><span class="line">父元素.children //得到的是数组</span><br><span class="line">&lt;!-- 兄弟关系查找 --&gt;</span><br><span class="line">&lt;!-- 下一个兄弟节点 --&gt;</span><br><span class="line">nextElementSibling 属性</span><br><span class="line">&lt;!-- 上一个兄弟节点 --&gt;</span><br><span class="line">previousElmentSibling 属性</span><br></pre></td></tr></table></figure>
-<h6 id="增加节点"><a href="#增加节点" class="headerlink" title="增加节点"></a>增加节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.createElement(&#x27;标签名&#x27;)</span><br><span class="line">&lt;!-- 追加节点 --&gt;</span><br><span class="line">&lt;!-- 插入到父元素的最后一个子元素 --&gt;</span><br><span class="line">父元素.appendChild(要插入的元素)</span><br><span class="line">&lt;!-- 插入到父元素中某个子元素的前面 --&gt;</span><br><span class="line">父元素.insertBefore(要插入的元素,在哪个元素前面)</span><br></pre></td></tr></table></figure>
-<h6 id="克隆和删除节点"><a href="#克隆和删除节点" class="headerlink" title="克隆和删除节点"></a>克隆和删除节点</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 克隆节点 --&gt;</span><br><span class="line">元素.cloneNode(布尔值)</span><br><span class="line">布尔值若为true，则代表克隆时会包含后代节点一起克隆</span><br><span class="line">若为false,则不代表后代节点</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 删除节点 --&gt;</span><br><span class="line">&lt;!-- 1.若一个节点在页面中已不需要时，可以删除它 --&gt;</span><br><span class="line">&lt;!-- 在Javascript中，原生DOM操作中，要删除必须通过父元素删除，否则删除失败 --&gt;</span><br><span class="line">父元素.removeChild(要删除的元素)</span><br></pre></td></tr></table></figure>
-<h5 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h5><p>类-&gt;对象</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let date = new Date()</span><br><span class="line">let date = new Date(&#x27;1949-10-01 18:30:00&#x27;) // 指定时间</span><br></pre></td></tr></table></figure>
-<h6 id="时间对象方法"><a href="#时间对象方法" class="headerlink" title="时间对象方法"></a>时间对象方法</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getFullYear()获得年份</span><br><span class="line">getMouth()获得月份(0-11)</span><br><span class="line">getDate()获取月份的天数</span><br><span class="line">getDay()获得星期(0-6)</span><br><span class="line">GetHours()获得小时(0-23)</span><br><span class="line">getMinutes()获得分钟(0-59)</span><br><span class="line">getSeconds()获得秒(0-59)</span><br></pre></td></tr></table></figure>
-<h6 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h6><p>是指1970年01月01日00时00分00秒起到现在的毫秒数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 获取时间戳 --&gt;</span><br><span class="line">&lt;!-- 使用getTime方法 --&gt;</span><br><span class="line">let date = new Date()</span><br><span class="line">date.getTime()</span><br><span class="line">&lt;!-- 简写 --&gt;</span><br><span class="line">+new Date()</span><br><span class="line">&lt;!-- 第三种 --&gt;</span><br><span class="line">Date.now()</span><br></pre></td></tr></table></figure>
-<h5 id="事件对象-1"><a href="#事件对象-1" class="headerlink" title="事件对象"></a>事件对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">event,ev,e</span><br><span class="line">元素.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h6 id="事件对象常用属性"><a href="#事件对象常用属性" class="headerlink" title="事件对象常用属性"></a>事件对象常用属性</h6><ul>
-<li>type-&gt;获取当前的事件类型</li>
-<li>clientX&#x2F;clientY-&gt;获取光标相对于浏览器可见窗口左上角的位置</li>
-<li>offsetX&#x2F;offsetY-&gt;获取光标相对于当前DOM元素左上角的位置</li>
-<li>key-&gt;用户按下键盘的值</li>
-</ul>
-<h6 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h6><p>事件冒泡：当一个元素的事件被触发时，同样的事件将会在该元素的所有祖先元素中依次被触发<br>阻止事件流动:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">son.addEventListener(&#x27;click&#x27;,function(e)&#123;</span><br><span class="line">            alert(1)</span><br><span class="line">            e.stopPropagation()</span><br><span class="line">            </span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-<p>事件捕获：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOM.addEventListener(事件类型，事件处理函数，是否使用捕获机制)</span><br></pre></td></tr></table></figure>
-<h6 id="鼠标经过事件"><a href="#鼠标经过事件" class="headerlink" title="鼠标经过事件"></a>鼠标经过事件</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mouseover()和mouseout()会有冒泡效果</span><br><span class="line">mouseenter()和mouseleave()没有冒泡效果(推荐)</span><br></pre></td></tr></table></figure>
-<h6 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h6><h5 id="滚动时间和加载事件"><a href="#滚动时间和加载事件" class="headerlink" title="滚动时间和加载事件"></a>滚动时间和加载事件</h5><h6 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h6><p>事件名：scroll</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h6 id="加载事件"><a href="#加载事件" class="headerlink" title="加载事件"></a>加载事件</h6><p>加载外部资源(如图片，外联css和javascript)，加载完毕触发的事件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;load&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h5 id="元素大小和位置"><a href="#元素大小和位置" class="headerlink" title="元素大小和位置"></a>元素大小和位置</h5><h6 id="scroll家族"><a href="#scroll家族" class="headerlink" title="scroll家族"></a>scroll家族</h6><p>可以用来检测页面滚动的距离<br>scrollWidth和scrollHeight，获取自身内容的宽和高<br>scrollTop和scrollLeft，获取元素向左向上滚出去看不到的距离，是可读写的属性</p>
-<!-- 复制不要给单位 -->
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.addEventListener(&#x27;scroll&#x27;,function()&#123;</span><br><span class="line">            console.log(document.documentElement.scrollTop);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-<h6 id="offset家族"><a href="#offset家族" class="headerlink" title="offset家族"></a>offset家族</h6><p>获取宽高：<br>获取元素的自身高度、包含元素自身设置的宽高、padding、border<br>offsetWidth和offsetHeight<br>获取位置：<br>获取元素距离自己定位父级元素的左、上距离<br>offsetLeft和offsetTop 注意是只读属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop = neirongs[i].offsetTop</span><br></pre></td></tr></table></figure>
-
-<h6 id="client家族"><a href="#client家族" class="headerlink" title="client家族"></a>client家族</h6><p>获取宽高：<br>获取元素的可见部分宽高(不包含边框，滚动条等)<br>clientWidth和clientHeight<br>获取位置：<br>clientLeft和clientTop得到上边框和左边框的宽度(只读属性)<br>窗口尺寸改变的时候触发事件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 得到当前屏幕的尺寸 --&gt;</span><br><span class="line">window.addEventListener(&#x27;resize&#x27;,function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6>
-<h5 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h5><ul>
-<li>BOM(浏览器对象模型)</li>
-<li>定时器-延迟函数</li>
-<li>JS执行机制</li>
-<li>location对象</li>
-<li>navigator对象</li>
-<li>history对象</li>
-</ul>
-<h6 id="BOM-Browser-Object-Model-是浏览器对象模型"><a href="#BOM-Browser-Object-Model-是浏览器对象模型" class="headerlink" title="BOM(Browser Object Model)是浏览器对象模型"></a>BOM(Browser Object Model)是浏览器对象模型</h6>
-<h6 id="定时器-延迟函数"><a href="#定时器-延迟函数" class="headerlink" title="定时器-延迟函数"></a>定时器-延迟函数</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">&lt;!-- 执行一次 --&gt;</span><br><span class="line">let timer = setTimeout(回调函数，等待的毫秒数)</span><br><span class="line">clearTimeout(timer)</span><br></pre></td></tr></table></figure>
-
-<h6 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javaScript语言的一大特点就是单线程，同一时间只能做一件事</span><br><span class="line">单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务</span><br></pre></td></tr></table></figure>
-<p>同步和异步：为了解决这个问题，利用多核CPU的计算能力,HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程。于是，JS中出现了同步和异步<br>同步：前一个任务结束后再执行后一个任务，程序的执行顺序与任务的排列顺序是一致的<br>异步：在做这件事的同时，可以去处理其他事情</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.先执行执行栈中的同步任务</span><br><span class="line">2.异步任务放入到任务队列中</span><br><span class="line">3.一旦执行栈中的所有同步任务执行完毕，系统会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。</span><br></pre></td></tr></table></figure>
-<h6 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h6><p>常见属性和方法<br>href属性获取完整的URL地址，对其赋值时用于地址的跳转</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.href</span><br><span class="line">&lt;!-- 可以修改，实现页面跳转 --&gt;</span><br></pre></td></tr></table></figure>
-<p>search属性获取地址中携带的参数，符号?后面部分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.search</span><br></pre></td></tr></table></figure>
-<p>hash属性返回获取地址中的哈希值，符号#后面部分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.hash</span><br></pre></td></tr></table></figure>
-<p>reload方法用来刷新当前页面，传入参数true时表示刷新</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">location.reload(true)</span><br></pre></td></tr></table></figure>
-<p>history对象<br>方法：<br>back()   &#x2F;&#x2F;后退功能<br>forward()&#x2F;&#x2F;前进功能<br>go(参数)  &#x2F;&#x2F;前进或后退,参数是1前进,参数是-1是后退</p>
-<h5 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h5><ul>
-<li>数据存储在用户浏览器中</li>
-<li>设置、读取方便、甚至页面刷新不会丢失数据</li>
-<li>容量较大，sessionStorage和localStorage约5M左右</li>
-</ul>
-<h6 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h6><ul>
-<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
-<li>可以多窗口共享</li>
-<li>以键值对的形式存储使用</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">存储数据：</span><br><span class="line">localStorage.setltem(key,value)</span><br><span class="line">获取数据：</span><br><span class="line">localStorage.getltem(key)</span><br><span class="line">删除数据：</span><br><span class="line">localStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
-<p>本地只能存储字符串，无法存储复杂数据类型。需要将复杂数据类型转换成JSON字符串</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(复杂数据类型)</span><br><span class="line">将复杂数据类型转换成JSON字符串，存储在本地存储中</span><br><span class="line">JSON.parse(JSON字符串)</span><br><span class="line">将JSON字符串转换成对象，取出时候使用</span><br></pre></td></tr></table></figure>
-<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
-<li>正则表达式(Regular Expression)是用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象</li>
-<li>通常用来查找、替换那些符合正则表达式的文本，许多语言都支持正则表达式<br>作用：<br>用于匹配字符串中字符组合的模式<br>表单验证<br>过滤敏感词<br>字符串提取我们想要的部分<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- let arr = /表达式/ --&gt;</span><br><span class="line">regObj.test(被检查的字符串)//返回值为true或false</span><br><span class="line">regObj.exec(被检测的字符串)//返回值为数组</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h6 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h6><p>边界符：’^’-&gt;表示匹配行首的文本,’$’表示匹配行尾的文本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/哈/.test(&#x27;哈哈&#x27;))</span><br><span class="line">console.log(/哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/^哈/.test(&#x27;二哈&#x27;))</span><br><span class="line">console.log(/哈$/.test(&#x27;二哈&#x27;))</span><br></pre></td></tr></table></figure>
-<p>量词：</p>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a*/.test(&#x27;a&#x27;));</span><br><span class="line">console.log(/a+/.test(&#x27;b&#x27;));</span><br><span class="line">console.log(/a?/.test(&#x27;b&#x27;));</span><br></pre></td></tr></table></figure>
-<p>字符类：<br>[]匹配字符合集<br>后面只要包含abc中任意一个字符，都返回true<br>[a-zA-Z0-9]不区分大小写<br>[1-9][0-9]{4,}-&gt;第一位1-9,第二位0-9,大于4位<br>[^a-z]-&gt;除小写字符</p>
-
-<p>修饰符：<br>i是ignore的缩写，正则匹配时字母不区分大小写<br>g是global的意思，匹配所有满足正则表达式的结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(/a/i.test(&#x27;a&#x27;))</span><br><span class="line">console.log(/a/i.test(&#x27;A&#x27;))</span><br><span class="line">&lt;!-- 替换 --&gt;</span><br><span class="line">字符串.replace(/正则表达式/,&#x27;替换的文本&#x27;)</span><br><span class="line">div.innerHTML = textarea.value.replace(/傻逼|基情/g,&#x27;**&#x27;)</span><br></pre></td></tr></table></figure>
       
     </div>
     
