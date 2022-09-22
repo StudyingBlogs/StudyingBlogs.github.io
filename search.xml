@@ -457,12 +457,12 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>Java学习</title>
     <url>/posts/0/</url>
     <content><![CDATA[<p>title: Java学习<br>date: 2022-08-29 20:56:42<br>tags:<br>description: Java学习记录</p>
-<h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><img src="/posts/undefined/3.png" class title="图片">
+<h1 id="Java学习"><a href="#Java学习" class="headerlink" title="Java学习"></a>Java学习</h1><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><img src="/posts/0/3.png" class title="图片">
 
-<img src="/posts/undefined/4.png" class title="图片">
+<img src="/posts/0/4.png" class title="图片">
 
 <h3 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h3><h4 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">add();<span class="comment">//添加元素</span></span><br><span class="line">remove();<span class="comment">//删除元素，可删除元素或索引</span></span><br><span class="line">contains();<span class="comment">//查看某个元素是否存在</span></span><br><span class="line">isEmpty();<span class="comment">//判断是否为空</span></span><br><span class="line">size();<span class="comment">//获取集合元素个数</span></span><br><span class="line">clear();<span class="comment">//清空集合</span></span><br><span class="line">addAll();<span class="comment">//添加多个元素</span></span><br><span class="line">containsAll();<span class="comment">//查找多个元素是否存在</span></span><br><span class="line">removeAll();<span class="comment">//删除多个元素 </span></span><br></pre></td></tr></table></figure>
 
@@ -541,7 +541,7 @@
 <li>使用特点与Hashtable类似</li>
 <li>Properties还可以用于从 xxxx.properties文件中，加载数据到Properties类对象，并进行读取和修改</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><img src="/posts/undefined/5.png" class title="图片">
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><img src="/posts/0/5.png" class title="图片">
 
 <h4 id="Collection工具类"><a href="#Collection工具类" class="headerlink" title="Collection工具类"></a>Collection工具类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.reverse(arrayList);<span class="comment">//翻转</span></span><br><span class="line">Collections.shuffle(arrayList);<span class="comment">//随机排序</span></span><br><span class="line">Collectios.sort(arrayList);<span class="comment">//自然排序</span></span><br><span class="line">Collections.swap(arrayList,<span class="number">1</span>,<span class="number">2</span>);<span class="comment">//交换元素</span></span><br><span class="line">Collections.max(arrayList);<span class="comment">//返回zira状态下最大的元素</span></span><br><span class="line">Collections.min(arrayList);<span class="comment">//返回zira状态下最小的元素 </span></span><br><span class="line">System.out.println(Collections.frequency(arrayList,<span class="string">&quot;tom&quot;</span>));<span class="comment">//出现的频率</span></span><br><span class="line">Collections.copy(arrayList1,arrayList);<span class="comment">//复制集合</span></span><br><span class="line">Collections.replaceAll(arrayList,<span class="string">&quot;tom&quot;</span>,<span class="string">&quot;汤姆&quot;</span>);<span class="comment">//将集合中的元素替换</span></span><br></pre></td></tr></table></figure>
 
